@@ -1,0 +1,14 @@
+# Normalise line endings in the repository to LF regardless of the OS a
+# contributor is on. Windows checkouts still get CRLF locally; this only
+# controls what is stored, which keeps diffs from churning between machines.
+* text=auto eol=lf
+
+# Binary-ish assets git should never try to normalise.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.avif binary
+*.woff binary
+*.woff2 binary
+*.ico binary

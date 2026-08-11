@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Arclight tokens
+   Light mode is "paper": near-white, hairline borders, ink text.
+   Dark mode is "ink": deep blue-black so the arc gradient reads as light.
+   ========================================================================== */
+@layer base {
+  :root {
+    --background: 240 20% 99%;
+    --foreground: 230 25% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 230 25% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 25% 8%;
+
+    --primary: 231 84% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 232 24% 95%;
+    --secondary-foreground: 230 25% 12%;
+
+    --muted: 232 24% 96%;
+    --muted-foreground: 230 10% 42%;
+    --accent: 232 30% 95%;
+    --accent-foreground: 230 25% 12%;
+    --destructive: 356 78% 52%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 232 18% 90%;
+    --input: 232 18% 88%;
+    --ring: 231 84% 60%;
+
+    /* Signature arc */
+    --arc-blue: 231 92% 62%;
+    --arc-violet: 262 88% 66%;
+    --arc-cyan: 189 88% 55%;
+
+    --hairline: 232 20% 91%;
+    --glass: 0 0% 100% / 0.72;
+    --radius: 14px;
+  }
+
+  .dark {
+    --background: 231 24% 5%;
+    --foreground: 228 20% 94%;
+
+    --card: 231 22% 8%;
+    --card-foreground: 228 20% 94%;
+    --popover: 231 24% 7%;
+    --popover-foreground: 228 20% 94%;
+
+    --primary: 233 96% 70%;
+    --primary-foreground: 231 40% 8%;
+    --secondary: 231 18% 14%;
+    --secondary-foreground: 228 20% 94%;
+
+    --muted: 231 18% 12%;
+    --muted-foreground: 228 12% 64%;
+    --accent: 231 20% 15%;
+    --accent-foreground: 228 20% 94%;
+    --destructive: 356 80% 58%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 231 16% 16%;
+    --input: 231 16% 19%;
+    --ring: 233 96% 70%;
+
+    --arc-blue: 228 96% 68%;
+    --arc-violet: 264 92% 72%;
+    --arc-cyan: 187 92% 60%;
+
+    --hairline: 231 16% 17%;
+    --glass: 231 24% 8% / 0.62;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Sticky navbar height + breathing room for in-page anchors. */
+    scroll-padding-top: 6rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Accessibility: a visible, high-contrast focus ring everywhere. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  ::selection {
+    @apply bg-primary/25 text-foreground;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display font-semibold tracking-tight;
+    text-wrap: balance;
+  }
+
+  /* Respect the OS reduced-motion setting for every animation on the site. */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Frosted panel used for floating cards, navbar and pricing surfaces. */
+  .glass {
+    background: hsl(var(--glass));
+    @apply backdrop-blur-xl backdrop-saturate-150 border border-border/70;
+  }
+
+  /* Gradient text reserved for one or two words per page, never a sentence. */
+  .text-arc {
+    @apply bg-arc-gradient bg-clip-text text-transparent;
+  }
+
+  /* 1px gradient outline: draws the arc on a card edge without a heavy border. */
+  .arc-ring {
+    position: relative;
+  }
+  .arc-ring::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(140deg, hsl(var(--arc-violet) / 0.7), transparent 45%, hsl(var(--arc-cyan) / 0.45));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 400ms cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+  .arc-ring:hover::before,
+  .arc-ring:focus-within::before {
+    opacity: 1;
+  }
+
+  /* Mono eyebrow label — the site's structural signpost. */
+  .eyebrow {
+    @apply inline-flex items-center gap-2.5 font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground;
+  }
+
+  .section {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+
+  /* Fade the marquee edges so logos enter and leave, rather than pop. */
+  .mask-edges {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
