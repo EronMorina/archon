@@ -91,7 +91,14 @@ export function generateMetadata({ params }: { params: { locale: string } }): Me
       follow: true,
       googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
     },
-    icons: { icon: '/favicon.svg', apple: '/favicon.svg' },
+    /*
+      No `icons` entry on purpose. `src/app/icon.svg` and `apple-icon.svg` are
+      picked up by Next's file convention and served from a content-hashed URL
+      (`/icon?<hash>`), which is what actually forces browsers to pick up a new
+      tab icon — favicons are cached far more stubbornly than any other asset,
+      and a fixed `/favicon.svg` path can keep serving the old one for days.
+      Declaring `icons` here would override the convention and lose the hash.
+    */
     manifest: '/manifest.webmanifest',
   }
 }
