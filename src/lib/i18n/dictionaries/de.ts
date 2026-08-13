@@ -11,6 +11,7 @@ export const de: Dictionary = {
     tagline: 'Wir bauen Software, die Unternehmen voranbringt.',
     description:
       'ARCHON ist ein Software-Studio, das Websites, individuelle Webanwendungen, KI-gestützte Lösungen und Geschäftsprozess-Automatisierung für Start-ups und wachsende Unternehmen konzipiert und entwickelt.',
+    kicker: 'Software-Studio',
     remoteFirst: 'Remote-first',
   },
 
@@ -87,7 +88,7 @@ export const de: Dictionary = {
       note: 'Eine Engineering-Notiz pro Monat. Keine Kampagnenstrecken, keine Verkaufsmails.',
       invalid: 'Bitte geben Sie eine E-Mail-Adresse an, unter der wir Sie erreichen.',
       success: 'Sie stehen auf der Liste. Eine Ausgabe pro Monat.',
-      failed: 'Das hat nicht geklappt. Versuchen Sie es erneut oder schreiben Sie an hello@archon.studio.',
+      failed: 'Das hat nicht geklappt. Versuchen Sie es erneut oder schreiben Sie an archonisolutions@gmail.com.',
     },
   },
 
@@ -101,7 +102,6 @@ export const de: Dictionary = {
   },
 
   hero: {
-    eyebrow: 'Software-Studio · Seit 2017',
     titleLine1: 'Wir bauen Software, die',
     titleLine2Before: '',
     titleLine2Highlight: 'Unternehmen',
@@ -428,7 +428,7 @@ export const de: Dictionary = {
       'Jede Anfrage liest ein Mensch — die Antwort kommt meist innerhalb eines Werktags. Wenn es eilt, buchen Sie über den Kalenderlink auf dieser Seite direkt einen Termin.',
     sendAnother: 'Weitere Nachricht senden',
     failed:
-      'Das hat nicht geklappt. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut, oder schreiben Sie direkt an hello@archon.studio.',
+      'Das hat nicht geklappt. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut, oder schreiben Sie direkt an archonisolutions@gmail.com.',
     topics: {
       newProject: 'Ein neues Produkt oder eine neue Website',
       existingProduct: 'Etwas Bestehendes verbessern',

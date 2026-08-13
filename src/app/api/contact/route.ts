@@ -82,7 +82,7 @@ export async function POST(request: Request) {
 
     await resend.emails.send({
       from: process.env.CONTACT_FROM_EMAIL ?? 'website@archon.studio',
-      to: process.env.CONTACT_TO_EMAIL ?? 'hello@archon.studio',
+      to: process.env.CONTACT_TO_EMAIL ?? 'archonisolutions@gmail.com',
       replyTo: String(data.email),
       subject,
       text: Object.entries(data)

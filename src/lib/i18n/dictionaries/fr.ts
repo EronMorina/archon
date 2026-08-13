@@ -12,6 +12,7 @@ export const fr: Dictionary = {
     tagline: 'Nous créons des logiciels qui font avancer les entreprises.',
     description:
       'ARCHON est un studio logiciel qui conçoit et développe des sites web, des applications web sur mesure, des solutions basées sur l’IA et l’automatisation des processus pour les start-up et les entreprises en croissance.',
+    kicker: 'Studio logiciel',
     remoteFirst: 'Télétravail d’abord',
   },
 
@@ -88,7 +89,7 @@ export const fr: Dictionary = {
       note: 'Une note d’ingénierie par mois. Aucune séquence, aucune relance commerciale.',
       invalid: 'Indiquez une adresse e-mail à laquelle nous pouvons vous joindre.',
       success: 'Vous êtes inscrit. Un numéro par mois.',
-      failed: 'L’envoi a échoué. Réessayez, ou écrivez à hello@archon.studio.',
+      failed: 'L’envoi a échoué. Réessayez, ou écrivez à archonisolutions@gmail.com.',
     },
   },
 
@@ -102,7 +103,6 @@ export const fr: Dictionary = {
   },
 
   hero: {
-    eyebrow: 'Studio logiciel · Depuis 2017',
     titleLine1: 'Nous créons des logiciels qui',
     titleLine2Before: 'font avancer les ',
     titleLine2Highlight: 'entreprises',
@@ -429,7 +429,7 @@ export const fr: Dictionary = {
       'Un humain lit chaque demande — réponse généralement sous un jour ouvré. Si c’est urgent, le lien d’agenda de cette page réserve directement un créneau.',
     sendAnother: 'Envoyer un autre message',
     failed:
-      'L’envoi a échoué. Vérifiez votre connexion et réessayez, ou écrivez directement à hello@archon.studio.',
+      'L’envoi a échoué. Vérifiez votre connexion et réessayez, ou écrivez directement à archonisolutions@gmail.com.',
     topics: {
       newProject: 'Un nouveau produit ou site',
       existingProduct: 'Améliorer un existant',

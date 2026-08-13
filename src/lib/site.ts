@@ -44,7 +44,7 @@ export const site = {
   name: 'ARCHON',
   legalName: 'Archon Studio Ltd.',
   url: resolveSiteUrl(),
-  email: 'hello@archon.studio',
+  email: 'archonisolutions@gmail.com',
   phone: '+1 (415) 555-0132',
   address: { street: '2 Pier Road, Suite 400', city: 'San Francisco', region: 'CA', postal: '94111', country: 'US' },
   calendly: process.env.NEXT_PUBLIC_CALENDLY_URL ?? 'https://calendly.com/archon-studio/intro-call',

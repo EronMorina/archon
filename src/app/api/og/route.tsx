@@ -66,7 +66,7 @@ export function GET(request: Request) {
         </p>
 
         <p style={{ color: '#8d9096', fontSize: 26, letterSpacing: '0.06em', margin: 0, textTransform: 'uppercase' }}>
-          {t.hero.eyebrow.split('·')[0].trim()} · {site.url.replace('https://', '')}
+          {t.site.kicker} · {site.url.replace('https://', '')}
         </p>
       </div>
     ),

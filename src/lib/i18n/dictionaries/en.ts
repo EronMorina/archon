@@ -14,6 +14,7 @@ export const en = {
     tagline: 'Building software that moves businesses forward.',
     description:
       'ARCHON is a software studio that designs and builds websites, custom web applications, AI-powered solutions and business automation for startups and growing companies.',
+    kicker: 'Software studio',
     remoteFirst: 'Remote-first',
   },
 
@@ -90,7 +91,7 @@ export const en = {
       note: 'One engineering note a month. No sequences, no sales drips.',
       invalid: 'Enter an email address we can reach you at.',
       success: 'You are on the list. One issue a month.',
-      failed: 'That did not send. Try again, or email hello@archon.studio.',
+      failed: 'That did not send. Try again, or email archonisolutions@gmail.com.',
     },
   },
 
@@ -104,7 +105,6 @@ export const en = {
   },
 
   hero: {
-    eyebrow: 'Software studio · Since 2017',
     titleLine1: 'Building software that',
     titleLine2Before: 'moves ',
     titleLine2Highlight: 'businesses',
@@ -427,7 +427,7 @@ export const en = {
     sentBody:
       'A person reads every enquiry — usually a reply within one business day. If it is urgent, the calendar link on this page books straight into a slot.',
     sendAnother: 'Send another message',
-    failed: 'That did not send. Check your connection and try again, or email hello@archon.studio directly.',
+    failed: 'That did not send. Check your connection and try again, or email archonisolutions@gmail.com directly.',
     topics: {
       newProject: 'A new product or site',
       existingProduct: 'Improving something live',

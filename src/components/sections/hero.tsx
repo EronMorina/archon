@@ -60,17 +60,7 @@ export function Hero({ locale }: { locale: Locale }) {
 
       <div className="container relative">
         <div className="mx-auto max-w-3xl text-center">
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="eyebrow justify-center"
-          >
-            <span aria-hidden className="h-px w-7 bg-apex-gradient" />
-            {t.eyebrow}
-          </motion.p>
-
-          <h1 className="mt-7 text-display-sm md:text-display-md lg:text-display-lg">
+          <h1 className="text-display-sm md:text-display-md lg:text-display-lg">
             <motion.span custom={0} variants={line} initial="hidden" animate="show" className="block">
               {t.titleLine1}
             </motion.span>
