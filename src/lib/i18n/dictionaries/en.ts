@@ -356,8 +356,6 @@ export const en = {
       formHeading: 'Enquiry form',
       details: {
         email: 'Email',
-        phone: 'Phone',
-        studio: 'Studio',
         replyTime: 'Reply time',
         replyValue: 'One business day, from a person',
       },

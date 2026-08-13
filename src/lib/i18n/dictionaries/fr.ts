@@ -356,8 +356,6 @@ export const fr: Dictionary = {
       formHeading: 'Formulaire de demande',
       details: {
         email: 'E-mail',
-        phone: 'Téléphone',
-        studio: 'Studio',
         replyTime: 'Délai de réponse',
         replyValue: 'Un jour ouvré, par un humain',
       },

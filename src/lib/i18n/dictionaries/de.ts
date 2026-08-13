@@ -355,8 +355,6 @@ export const de: Dictionary = {
       formHeading: 'Anfrageformular',
       details: {
         email: 'E-Mail',
-        phone: 'Telefon',
-        studio: 'Studio',
         replyTime: 'Antwortzeit',
         replyValue: 'Ein Werktag, von einem Menschen',
       },

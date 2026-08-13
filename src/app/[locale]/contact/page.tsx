@@ -1,4 +1,4 @@
-import { Clock, Mail, MapPin, Phone } from 'lucide-react'
+import { Clock, Mail } from 'lucide-react'
 import { buildMetadata } from '@/lib/seo'
 import { site } from '@/lib/site'
 import { getDictionary } from '@/lib/i18n'
@@ -21,12 +21,6 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
 
   const details = [
     { icon: Mail, label: t.details.email, value: site.email, href: `mailto:${site.email}` },
-    { icon: Phone, label: t.details.phone, value: site.phone, href: `tel:${site.phone.replace(/[^+\d]/g, '')}` },
-    {
-      icon: MapPin,
-      label: t.details.studio,
-      value: `${site.address.street}, ${site.address.city} ${site.address.postal}`,
-    },
     { icon: Clock, label: t.details.replyTime, value: t.details.replyValue },
   ]
 
