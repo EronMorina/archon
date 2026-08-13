@@ -11,7 +11,7 @@ export function ScrollProgress() {
     <motion.div
       aria-hidden
       style={{ scaleX: width }}
-      className="fixed inset-x-0 top-0 z-[60] h-[2px] origin-left bg-arc-gradient"
+      className="fixed inset-x-0 top-0 z-[60] h-[2px] origin-left bg-apex-gradient"
     />
   )
 }

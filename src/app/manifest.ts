@@ -18,8 +18,8 @@ export default function manifest(): MetadataRoute.Manifest {
     lang: localeMeta[defaultLocale].tag,
     start_url: '/',
     display: 'standalone',
-    background_color: '#0a0b10',
-    theme_color: '#0a0b10',
+    background_color: '#0b0c0e',
+    theme_color: '#0b0c0e',
     icons: [{ src: '/favicon.svg', sizes: 'any', type: 'image/svg+xml' }],
   }
 }

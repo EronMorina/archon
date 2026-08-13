@@ -81,8 +81,8 @@ export async function POST(request: Request) {
       : `New enquiry — ${data.name} (${data.company || 'no company'})`
 
     await resend.emails.send({
-      from: process.env.CONTACT_FROM_EMAIL ?? 'website@arclight.studio',
-      to: process.env.CONTACT_TO_EMAIL ?? 'hello@arclight.studio',
+      from: process.env.CONTACT_FROM_EMAIL ?? 'website@archon.studio',
+      to: process.env.CONTACT_TO_EMAIL ?? 'hello@archon.studio',
       replyTo: String(data.email),
       subject,
       text: Object.entries(data)

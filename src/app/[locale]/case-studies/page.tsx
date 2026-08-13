@@ -37,7 +37,7 @@ export default function CaseStudiesPage({ params }: { params: { locale: string }
             const href = localePath(locale, `/case-studies/${project.slug}`)
             return (
               <Reveal key={project.slug} delay={i * 0.05}>
-                <article className="arc-ring group overflow-hidden rounded-xl border border-border bg-card transition-transform duration-500 ease-arc hover:-translate-y-1">
+                <article className="apex-ring group overflow-hidden rounded-xl border border-border bg-card transition-transform duration-500 ease-apex hover:-translate-y-1">
                   <div className="grid lg:grid-cols-[0.85fr_1.15fr]">
                     <Link
                       href={href}
@@ -51,13 +51,13 @@ export default function CaseStudiesPage({ params }: { params: { locale: string }
                         fill
                         sizes="(max-width: 1024px) 100vw, 40vw"
                         loading={i === 0 ? 'eager' : 'lazy'}
-                        className="object-cover transition-transform duration-700 ease-arc group-hover:scale-[1.03]"
+                        className="object-cover transition-transform duration-700 ease-apex group-hover:scale-[1.03]"
                       />
                     </Link>
 
                     <div className="p-7 md:p-9">
                       <div className="flex flex-wrap items-center gap-3">
-                        <Badge variant="arc">{t.categories[project.category]}</Badge>
+                        <Badge variant="apex">{t.categories[project.category]}</Badge>
                         <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
                           {project.client} · {project.industry} · {project.year}
                         </span>
@@ -99,7 +99,7 @@ export default function CaseStudiesPage({ params }: { params: { locale: string }
                             className="inline-flex items-center gap-1.5 text-sm font-medium text-primary"
                           >
                             {t.portfolioSection.readCaseStudy}
-                            <ArrowRight className="size-4 transition-transform duration-300 ease-arc group-hover:translate-x-1" />
+                            <ArrowRight className="size-4 transition-transform duration-300 ease-apex group-hover:translate-x-1" />
                           </Link>
                         </div>
                       </div>

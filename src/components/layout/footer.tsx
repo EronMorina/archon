@@ -13,7 +13,7 @@ export function Footer({ locale }: { locale: Locale }) {
     <footer className="relative border-t border-border">
       {/* A final, faint arc closing the page. */}
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 flex justify-center overflow-hidden">
-        <div className="h-64 w-[min(120rem,150%)] rounded-[50%] bg-[radial-gradient(closest-side,hsl(var(--arc-violet)/0.12),transparent_70%)]" />
+        <div className="h-64 w-[min(120rem,150%)] rounded-[50%] bg-[radial-gradient(closest-side,hsl(var(--apex-mid)/0.12),transparent_70%)]" />
       </div>
 
       <div className="container relative py-16 md:py-20">

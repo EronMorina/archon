@@ -62,7 +62,7 @@ export function ProjectFilter({ projects }: { projects: Project[] }) {
                 {active && (
                   <motion.span
                     layoutId="filter-pill"
-                    className="absolute inset-0 rounded-md bg-arc-gradient"
+                    className="absolute inset-0 rounded-md bg-apex-gradient"
                     transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                   />
                 )}

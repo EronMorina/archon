@@ -10,7 +10,7 @@ import { localePath } from '@/lib/i18n/paths'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Reveal } from '@/components/ui/reveal'
-import { ArcBackdrop } from '@/components/ui/arc-backdrop'
+import { ApexBackdrop } from '@/components/ui/apex-backdrop'
 import { Cta } from '@/components/sections/cta'
 import { ProjectLinks } from '@/components/sections/project-links'
 import { NotFoundView } from '@/components/layout/not-found-view'
@@ -84,7 +84,7 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
 
       {/* Header */}
       <section className="relative isolate overflow-hidden pb-14 pt-32 md:pt-40">
-        <ArcBackdrop intensity="soft" />
+        <ApexBackdrop intensity="soft" />
         <div className="container relative">
           <Link
             href={localePath(locale, '/case-studies')}
@@ -95,7 +95,7 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
           </Link>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Badge variant="arc">{t.categories[project.category]}</Badge>
+            <Badge variant="apex">{t.categories[project.category]}</Badge>
             <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
               {project.client} · {project.industry} · {project.year}
             </span>
@@ -148,7 +148,7 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
             <Reveal>
               <div>
                 <h2 className="eyebrow mb-5">
-                  <span aria-hidden className="h-px w-7 bg-arc-gradient" />
+                  <span aria-hidden className="h-px w-7 bg-apex-gradient" />
                   {t.caseStudy.problem}
                 </h2>
                 <p className="text-lg leading-relaxed text-foreground/90 text-pretty">{caseStudy.problem}</p>
@@ -158,7 +158,7 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
             <Reveal>
               <div>
                 <h2 className="eyebrow mb-5">
-                  <span aria-hidden className="h-px w-7 bg-arc-gradient" />
+                  <span aria-hidden className="h-px w-7 bg-apex-gradient" />
                   {t.caseStudy.solution}
                 </h2>
                 <p className="text-lg leading-relaxed text-foreground/90 text-pretty">{caseStudy.solution}</p>
@@ -168,7 +168,7 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
             <Reveal>
               <div>
                 <h2 className="eyebrow mb-5">
-                  <span aria-hidden className="h-px w-7 bg-arc-gradient" />
+                  <span aria-hidden className="h-px w-7 bg-apex-gradient" />
                   {t.caseStudy.approach}
                 </h2>
                 <ol className="space-y-7">
@@ -188,13 +188,13 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
             <Reveal>
               <div>
                 <h2 className="eyebrow mb-5">
-                  <span aria-hidden className="h-px w-7 bg-arc-gradient" />
+                  <span aria-hidden className="h-px w-7 bg-apex-gradient" />
                   {t.caseStudy.results}
                 </h2>
                 <ul className="space-y-3.5">
                   {caseStudy.results.map((result) => (
                     <li key={result} className="flex gap-3">
-                      <Check className="mt-1 size-4 shrink-0 text-arc-cyan" aria-hidden />
+                      <Check className="mt-1 size-4 shrink-0 text-apex-soft" aria-hidden />
                       <span className="leading-relaxed text-foreground/90">{result}</span>
                     </li>
                   ))}
@@ -247,7 +247,7 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
 
             <ProjectLinks project={project} locale={locale} variant="buttons" />
 
-            <Button asChild variant="arc" size="lg" className="w-full">
+            <Button asChild variant="apex" size="lg" className="w-full">
               <Link href={localePath(locale, '/contact')}>{t.caseStudy.startProject}</Link>
             </Button>
           </aside>
@@ -271,7 +271,7 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
             </div>
             <ArrowRight
               aria-hidden
-              className="size-5 shrink-0 text-muted-foreground transition-transform duration-300 ease-arc group-hover:translate-x-1.5 group-hover:text-primary"
+              className="size-5 shrink-0 text-muted-foreground transition-transform duration-300 ease-apex group-hover:translate-x-1.5 group-hover:text-primary"
             />
           </Link>
         </div>

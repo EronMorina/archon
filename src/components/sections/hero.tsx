@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Activity, ArrowRight, CheckCircle2, GitBranch, Zap } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { ArcBackdrop } from '@/components/ui/arc-backdrop'
+import { ApexBackdrop } from '@/components/ui/apex-backdrop'
 import { Counter } from '@/components/ui/counter'
 import { getDictionary } from '@/lib/i18n'
 import { localePath } from '@/lib/i18n/paths'
@@ -33,7 +33,7 @@ export function Hero({ locale }: { locale: Locale }) {
 
   return (
     <section className="relative isolate overflow-hidden pb-20 pt-32 md:pb-28 md:pt-40 lg:pt-44">
-      <ArcBackdrop />
+      <ApexBackdrop />
 
       {/* Floating cards sit behind the text on small screens by being hidden entirely. */}
       <div aria-hidden className="pointer-events-none absolute inset-0 hidden sm:block">
@@ -47,7 +47,7 @@ export function Hero({ locale }: { locale: Locale }) {
           >
             <div className="glass animate-float rounded-xl px-4 py-3 shadow-glass" style={{ animationDelay: card.delay }}>
               <div className="flex items-center gap-2.5">
-                <card.icon className="size-3.5 text-arc-cyan" />
+                <card.icon className="size-3.5 text-apex-soft" />
                 <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
                   {t.cards[card.key]}
                 </span>
@@ -66,7 +66,7 @@ export function Hero({ locale }: { locale: Locale }) {
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="eyebrow justify-center"
           >
-            <span aria-hidden className="h-px w-7 bg-arc-gradient" />
+            <span aria-hidden className="h-px w-7 bg-apex-gradient" />
             {t.eyebrow}
           </motion.p>
 
@@ -76,7 +76,7 @@ export function Hero({ locale }: { locale: Locale }) {
             </motion.span>
             <motion.span custom={1} variants={line} initial="hidden" animate="show" className="block">
               {t.titleLine2Before}
-              <span className="text-arc">{t.titleLine2Highlight}</span>
+              <span className="text-apex">{t.titleLine2Highlight}</span>
               {t.titleLine2After}
             </motion.span>
           </h1>
@@ -96,10 +96,10 @@ export function Hero({ locale }: { locale: Locale }) {
             transition={{ duration: 0.8, delay: 0.56, ease: [0.22, 1, 0.36, 1] }}
             className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
           >
-            <Button asChild variant="arc" size="lg" className="group w-full sm:w-auto">
+            <Button asChild variant="apex" size="lg" className="group w-full sm:w-auto">
               <Link href={localePath(locale, '/contact')}>
                 {t.primaryCta}
-                <ArrowRight className="transition-transform duration-300 ease-arc group-hover:translate-x-1" />
+                <ArrowRight className="transition-transform duration-300 ease-apex group-hover:translate-x-1" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">

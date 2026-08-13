@@ -58,7 +58,7 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
                 {active && (
                   <motion.span
                     layoutId="blog-filter-pill"
-                    className="absolute inset-0 rounded-md bg-arc-gradient"
+                    className="absolute inset-0 rounded-md bg-apex-gradient"
                     transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                   />
                 )}
@@ -143,7 +143,7 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
                 </div>
                 <ArrowRight
                   aria-hidden
-                  className="size-4 shrink-0 text-muted-foreground transition-transform duration-300 ease-arc group-hover:translate-x-1 group-hover:text-primary"
+                  className="size-4 shrink-0 text-muted-foreground transition-transform duration-300 ease-apex group-hover:translate-x-1 group-hover:text-primary"
                 />
               </div>
             </motion.article>

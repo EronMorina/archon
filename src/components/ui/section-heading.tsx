@@ -23,7 +23,7 @@ export function SectionHeading({
     <div className={cn('max-w-2xl', align === 'center' && 'mx-auto text-center', className)}>
       {eyebrow && (
         <p className={cn('eyebrow mb-5', align === 'center' && 'justify-center')}>
-          <span aria-hidden className="h-px w-7 bg-arc-gradient" />
+          <span aria-hidden className="h-px w-7 bg-apex-gradient" />
           {eyebrow}
         </p>
       )}

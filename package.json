@@ -1,8 +1,8 @@
 {
-  "name": "arclight",
+  "name": "archon",
   "version": "1.0.0",
   "private": true,
-  "description": "Arclight — software studio marketing site. Next.js App Router + TypeScript + Tailwind + Framer Motion.",
+  "description": "ARCHON — software studio marketing site. Next.js App Router + TypeScript + Tailwind + Framer Motion.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -1,4 +1,4 @@
-import { ArcBackdrop } from '@/components/ui/arc-backdrop'
+import { ApexBackdrop } from '@/components/ui/apex-backdrop'
 
 /** Shared inner-page header: arc backdrop, eyebrow, display title, lead. */
 export function PageHeader({
@@ -14,10 +14,10 @@ export function PageHeader({
 }) {
   return (
     <section className="relative isolate overflow-hidden border-b border-border pb-16 pt-32 md:pb-20 md:pt-40">
-      <ArcBackdrop intensity="soft" />
+      <ApexBackdrop intensity="soft" />
       <div className="container relative">
         <p className="eyebrow">
-          <span aria-hidden className="h-px w-7 bg-arc-gradient" />
+          <span aria-hidden className="h-px w-7 bg-apex-gradient" />
           {eyebrow}
         </p>
         <h1 className="mt-6 max-w-3xl text-display-sm md:text-display-md">{title}</h1>

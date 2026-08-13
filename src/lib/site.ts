@@ -6,7 +6,7 @@
  * (`src/lib/i18n/dictionaries`), and hrefs are prefixed per locale at render
  * time with `localePath()`.
  */
-const DEFAULT_SITE_URL = 'https://arclight.studio'
+const DEFAULT_SITE_URL = 'https://archon.studio'
 
 /**
  * Resolve NEXT_PUBLIC_SITE_URL into something `new URL()` will accept.
@@ -40,19 +40,20 @@ function resolveSiteUrl(): string {
 }
 
 export const site = {
-  name: 'Arclight',
-  legalName: 'Arclight Studio Ltd.',
+  /** Set in caps to match the logotype; used verbatim in the wordmark and prose. */
+  name: 'ARCHON',
+  legalName: 'Archon Studio Ltd.',
   url: resolveSiteUrl(),
-  email: 'hello@arclight.studio',
+  email: 'hello@archon.studio',
   phone: '+1 (415) 555-0132',
   address: { street: '2 Pier Road, Suite 400', city: 'San Francisco', region: 'CA', postal: '94111', country: 'US' },
-  calendly: process.env.NEXT_PUBLIC_CALENDLY_URL ?? 'https://calendly.com/arclight-studio/intro-call',
+  calendly: process.env.NEXT_PUBLIC_CALENDLY_URL ?? 'https://calendly.com/archon-studio/intro-call',
   founded: '2017',
   socials: [
-    { label: 'GitHub', href: 'https://github.com/arclight-studio' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/arclight-studio' },
-    { label: 'X', href: 'https://x.com/arclightstudio' },
-    { label: 'Dribbble', href: 'https://dribbble.com/arclight-studio' },
+    { label: 'GitHub', href: 'https://github.com/archon-studio' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/archon-studio' },
+    { label: 'X', href: 'https://x.com/archonstudio' },
+    { label: 'Dribbble', href: 'https://dribbble.com/archon-studio' },
   ],
 } as const
 

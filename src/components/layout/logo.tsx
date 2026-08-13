@@ -5,8 +5,16 @@ import { localePath } from '@/lib/i18n/paths'
 import type { Locale } from '@/lib/i18n/config'
 
 /**
- * Wordmark. The glyph is the studio's arc: a rising curve with a light point
- * at its apex, drawn in the gradient so the brand mark states the theme.
+ * ARCHON wordmark.
+ *
+ * The glyph is a chevron — an open apex drawn as two strokes — with a small
+ * solid triangle nested at its base, which reads as the counter of an A. Both
+ * shapes are `currentColor`, so the mark inverts with the theme instead of
+ * carrying its own colour, which is the whole point of a monochrome identity.
+ *
+ * The strokes are drawn as filled paths rather than a stroked polyline: a
+ * stroke would scale its width with the SVG and thin out at favicon sizes,
+ * where the outer chevron and the inner triangle need to stay distinguishable.
  */
 export function Logo({ locale, className }: { locale: Locale; className?: string }) {
   const t = getDictionary(locale)
@@ -14,42 +22,20 @@ export function Logo({ locale, className }: { locale: Locale; className?: string
   return (
     <Link
       href={localePath(locale, '/')}
-      className={`group inline-flex items-center gap-2.5 rounded-md ${className ?? ''}`}
+      className={`group inline-flex items-center gap-3 rounded-md ${className ?? ''}`}
       aria-label={`${site.name} — ${t.a11y.home}`}
     >
-      <svg viewBox="0 0 28 28" className="size-7" aria-hidden focusable="false">
-        <defs>
-          <linearGradient id="arc-mark" x1="0" y1="28" x2="28" y2="0">
-            <stop offset="0%" stopColor="hsl(var(--arc-blue))" />
-            <stop offset="55%" stopColor="hsl(var(--arc-violet))" />
-            <stop offset="100%" stopColor="hsl(var(--arc-cyan))" />
-          </linearGradient>
-        </defs>
+      <svg viewBox="0 0 32 28" className="h-6 w-7 shrink-0" fill="currentColor" aria-hidden focusable="false">
+        {/* Outer chevron, drawn as a closed outline with a hollow centre. */}
         <path
-          d="M3 22.5C3 11.73 11.73 3 22.5 3"
-          fill="none"
-          stroke="url(#arc-mark)"
-          strokeWidth="2.6"
-          strokeLinecap="round"
+          d="M16 0.5 31.5 27.5H26.2L16 9.7 5.8 27.5H0.5L16 0.5Z"
+          className="transition-opacity duration-500 ease-apex group-hover:opacity-80"
         />
-        <path
-          d="M3 22.5c0-5.8 4.7-10.5 10.5-10.5"
-          fill="none"
-          stroke="currentColor"
-          strokeOpacity="0.28"
-          strokeWidth="2.6"
-          strokeLinecap="round"
-        />
-        <circle
-          cx="22.5"
-          cy="3"
-          r="2.6"
-          fill="hsl(var(--arc-cyan))"
-          className="transition-transform duration-500 ease-arc group-hover:scale-125"
-          style={{ transformOrigin: '22.5px 3px' }}
-        />
+        {/* Inner apex — the counter of the A. */}
+        <path d="M16 16.4 21.3 25.6H10.7L16 16.4Z" />
       </svg>
-      <span className="font-display text-[1.05rem] font-semibold tracking-[-0.02em]">{site.name}</span>
+
+      <span className="font-display text-[0.95rem] font-medium uppercase tracking-[0.34em]">{site.name}</span>
     </Link>
   )
 }

@@ -29,12 +29,12 @@ const principleIcons = [
 ] as const
 
 const team = [
-  { key: 'marcus', name: 'Marcus Ainsley', initials: 'MA', gradient: 'from-arc-blue to-arc-violet' },
-  { key: 'yuki', name: 'Yuki Tanaka', initials: 'YT', gradient: 'from-arc-violet to-arc-cyan' },
-  { key: 'ines', name: 'Ines Duarte', initials: 'ID', gradient: 'from-arc-cyan to-arc-blue' },
-  { key: 'sofia', name: 'Sofia Ferreira', initials: 'SF', gradient: 'from-arc-blue to-arc-cyan' },
-  { key: 'daniel', name: 'Daniel Achebe', initials: 'DA', gradient: 'from-arc-violet to-arc-blue' },
-  { key: 'hana', name: 'Hana Lindgren', initials: 'HL', gradient: 'from-arc-cyan to-arc-violet' },
+  { key: 'marcus', name: 'Marcus Ainsley', initials: 'MA', gradient: 'from-apex-strong to-apex-mid' },
+  { key: 'yuki', name: 'Yuki Tanaka', initials: 'YT', gradient: 'from-apex-mid to-apex-soft' },
+  { key: 'ines', name: 'Ines Duarte', initials: 'ID', gradient: 'from-apex-soft to-apex-strong' },
+  { key: 'sofia', name: 'Sofia Ferreira', initials: 'SF', gradient: 'from-apex-strong to-apex-soft' },
+  { key: 'daniel', name: 'Daniel Achebe', initials: 'DA', gradient: 'from-apex-mid to-apex-strong' },
+  { key: 'hana', name: 'Hana Lindgren', initials: 'HL', gradient: 'from-apex-soft to-apex-mid' },
 ] as const
 
 const milestoneYears = ['2017', '2019', '2021', '2023', '2025', '2026'] as const
@@ -107,11 +107,11 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {team.map((person, i) => (
               <Reveal key={person.key} delay={i * 0.05}>
-                <div className="arc-ring flex h-full items-start gap-4 rounded-xl border border-border bg-card p-6">
+                <div className="apex-ring flex h-full items-start gap-4 rounded-xl border border-border bg-card p-6">
                   <span
                     aria-hidden
                     className={cn(
-                      'flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br font-mono text-sm text-white',
+                      'flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br font-mono text-sm text-background',
                       person.gradient
                     )}
                   >

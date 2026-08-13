@@ -85,7 +85,7 @@ export function generateMetadata({ params }: { params: { locale: string } }): Me
       title: `${site.name} — ${t.site.tagline}`,
       description: t.site.description,
     },
-    twitter: { card: 'summary_large_image', creator: '@arclightstudio' },
+    twitter: { card: 'summary_large_image', creator: '@archonstudio' },
     robots: {
       index: true,
       follow: true,
@@ -101,7 +101,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#fcfcfd' },
-    { media: '(prefers-color-scheme: dark)', color: '#0a0b10' },
+    { media: '(prefers-color-scheme: dark)', color: '#0b0c0e' },
   ],
 }
 

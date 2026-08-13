@@ -3,77 +3,93 @@
 @tailwind utilities;
 
 /* ==========================================================================
-   Arclight tokens
-   Light mode is "paper": near-white, hairline borders, ink text.
-   Dark mode is "ink": deep blue-black so the arc gradient reads as light.
+   ARCHON tokens
+
+   Monochrome, matching the mark: the palette carries no hue at all, only
+   value. Every colour is a near-neutral HSL triplet — the 6–12% saturation
+   that remains keeps greys from looking muddy on OLED and cheap LCDs, and is
+   below the threshold where anyone would call it a colour.
+
+   Light mode is "paper", dark mode is "ink". Because the whole system is
+   value-based, the two are true inversions of each other rather than two
+   separately tuned palettes.
+
+   `--apex-*` is the accent ramp, named for the mark's apex. It is a value
+   ramp anchored to the foreground, so `bg-apex-gradient` is dark on paper and
+   light on ink, and anything sitting on it uses `text-background` to invert
+   with it. Never hard-code `text-white` over the ramp: it is only correct in
+   one of the two themes.
    ========================================================================== */
 @layer base {
   :root {
-    --background: 240 20% 99%;
-    --foreground: 230 25% 8%;
+    --background: 220 14% 99%;
+    --foreground: 220 12% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 230 25% 8%;
+    --card-foreground: 220 12% 8%;
     --popover: 0 0% 100%;
-    --popover-foreground: 230 25% 8%;
+    --popover-foreground: 220 12% 8%;
 
-    --primary: 231 84% 60%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 232 24% 95%;
-    --secondary-foreground: 230 25% 12%;
+    /* Mono primary: emphasis is carried by value, not hue. */
+    --primary: 220 12% 12%;
+    --primary-foreground: 220 14% 99%;
+    --secondary: 220 12% 95%;
+    --secondary-foreground: 220 12% 12%;
 
-    --muted: 232 24% 96%;
-    --muted-foreground: 230 10% 42%;
-    --accent: 232 30% 95%;
-    --accent-foreground: 230 25% 12%;
-    --destructive: 356 78% 52%;
+    --muted: 220 12% 96%;
+    --muted-foreground: 220 7% 40%;
+    --accent: 220 12% 95%;
+    --accent-foreground: 220 12% 12%;
+    /* The one surviving hue. Errors must not rely on value alone. */
+    --destructive: 356 72% 47%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 232 18% 90%;
-    --input: 232 18% 88%;
-    --ring: 231 84% 60%;
+    --border: 220 11% 90%;
+    --input: 220 11% 86%;
+    --ring: 220 12% 20%;
 
-    /* Signature arc */
-    --arc-blue: 231 92% 62%;
-    --arc-violet: 262 88% 66%;
-    --arc-cyan: 189 88% 55%;
+    /* Accent ramp — the mark's apex, light mode */
+    --apex-strong: 220 12% 10%;
+    --apex-mid: 220 8% 32%;
+    --apex-soft: 220 7% 46%;
 
-    --hairline: 232 20% 91%;
+    --hairline: 220 12% 91%;
     --glass: 0 0% 100% / 0.72;
     --radius: 14px;
   }
 
   .dark {
-    --background: 231 24% 5%;
-    --foreground: 228 20% 94%;
+    --background: 220 14% 5%;
+    --foreground: 220 10% 95%;
 
-    --card: 231 22% 8%;
-    --card-foreground: 228 20% 94%;
-    --popover: 231 24% 7%;
-    --popover-foreground: 228 20% 94%;
+    --card: 220 12% 8%;
+    --card-foreground: 220 10% 95%;
+    --popover: 220 13% 7%;
+    --popover-foreground: 220 10% 95%;
 
-    --primary: 233 96% 70%;
-    --primary-foreground: 231 40% 8%;
-    --secondary: 231 18% 14%;
-    --secondary-foreground: 228 20% 94%;
+    --primary: 220 10% 95%;
+    --primary-foreground: 220 14% 6%;
+    --secondary: 220 10% 14%;
+    --secondary-foreground: 220 10% 95%;
 
-    --muted: 231 18% 12%;
-    --muted-foreground: 228 12% 64%;
-    --accent: 231 20% 15%;
-    --accent-foreground: 228 20% 94%;
-    --destructive: 356 80% 58%;
+    --muted: 220 10% 12%;
+    --muted-foreground: 220 7% 63%;
+    --accent: 220 10% 15%;
+    --accent-foreground: 220 10% 95%;
+    --destructive: 356 76% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 231 16% 16%;
-    --input: 231 16% 19%;
-    --ring: 233 96% 70%;
+    --border: 220 9% 17%;
+    --input: 220 9% 20%;
+    --ring: 220 10% 82%;
 
-    --arc-blue: 228 96% 68%;
-    --arc-violet: 264 92% 72%;
-    --arc-cyan: 187 92% 60%;
+    /* Accent ramp — dark mode, the exact inversion */
+    --apex-strong: 220 10% 97%;
+    --apex-mid: 220 8% 74%;
+    --apex-soft: 220 7% 58%;
 
-    --hairline: 231 16% 17%;
-    --glass: 231 24% 8% / 0.62;
+    --hairline: 220 9% 18%;
+    --glass: 220 14% 8% / 0.62;
   }
 
   * {
@@ -125,22 +141,26 @@
     @apply backdrop-blur-xl backdrop-saturate-150 border border-border/70;
   }
 
-  /* Gradient text reserved for one or two words per page, never a sentence. */
-  .text-arc {
-    @apply bg-arc-gradient bg-clip-text text-transparent;
+  /*
+    Emphasis text, reserved for one or two words per page, never a sentence.
+    Monochrome leaves no hue to emphasise with, so this leans on weight and
+    full-strength foreground against the surrounding muted body copy.
+  */
+  .text-apex {
+    @apply font-semibold text-foreground;
   }
 
-  /* 1px gradient outline: draws the arc on a card edge without a heavy border. */
-  .arc-ring {
+  /* 1px outline: draws the mark's edge on a card without a heavy border. */
+  .apex-ring {
     position: relative;
   }
-  .arc-ring::before {
+  .apex-ring::before {
     content: '';
     position: absolute;
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(140deg, hsl(var(--arc-violet) / 0.7), transparent 45%, hsl(var(--arc-cyan) / 0.45));
+    background: linear-gradient(140deg, hsl(var(--foreground) / 0.45), transparent 45%, hsl(var(--foreground) / 0.2));
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -148,8 +168,8 @@
     transition: opacity 400ms cubic-bezier(0.22, 1, 0.36, 1);
     pointer-events: none;
   }
-  .arc-ring:hover::before,
-  .arc-ring:focus-within::before {
+  .apex-ring:hover::before,
+  .apex-ring:focus-within::before {
     opacity: 1;
   }
 

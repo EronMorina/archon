@@ -39,7 +39,7 @@ export function ProcessTimeline({ locale }: { locale: Locale }) {
           <motion.div
             aria-hidden
             style={reduce ? { height: '100%' } : { height }}
-            className="absolute left-[7px] top-2 w-px bg-arc-gradient md:left-1/2 md:-translate-x-1/2"
+            className="absolute left-[7px] top-2 w-px bg-apex-gradient md:left-1/2 md:-translate-x-1/2"
           />
 
           <ol className="space-y-12 md:space-y-0">
@@ -52,7 +52,7 @@ export function ProcessTimeline({ locale }: { locale: Locale }) {
                     aria-hidden
                     className="absolute left-[-25px] top-1.5 flex size-[15px] items-center justify-center rounded-full border border-border bg-background md:left-1/2 md:top-11 md:-translate-x-1/2"
                   >
-                    <span className="size-[5px] rounded-full bg-arc-gradient" />
+                    <span className="size-[5px] rounded-full bg-apex-gradient" />
                   </span>
 
                   <Reveal

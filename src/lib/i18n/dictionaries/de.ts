@@ -10,7 +10,7 @@ export const de: Dictionary = {
   site: {
     tagline: 'Wir bauen Software, die Unternehmen voranbringt.',
     description:
-      'Arclight ist ein Software-Studio, das Websites, individuelle Webanwendungen, KI-gestützte Lösungen und Geschäftsprozess-Automatisierung für Start-ups und wachsende Unternehmen konzipiert und entwickelt.',
+      'ARCHON ist ein Software-Studio, das Websites, individuelle Webanwendungen, KI-gestützte Lösungen und Geschäftsprozess-Automatisierung für Start-ups und wachsende Unternehmen konzipiert und entwickelt.',
     remoteFirst: 'Remote-first',
   },
 
@@ -87,7 +87,7 @@ export const de: Dictionary = {
       note: 'Eine Engineering-Notiz pro Monat. Keine Kampagnenstrecken, keine Verkaufsmails.',
       invalid: 'Bitte geben Sie eine E-Mail-Adresse an, unter der wir Sie erreichen.',
       success: 'Sie stehen auf der Liste. Eine Ausgabe pro Monat.',
-      failed: 'Das hat nicht geklappt. Versuchen Sie es erneut oder schreiben Sie an hello@arclight.studio.',
+      failed: 'Das hat nicht geklappt. Versuchen Sie es erneut oder schreiben Sie an hello@archon.studio.',
     },
   },
 
@@ -124,7 +124,7 @@ export const de: Dictionary = {
 
   servicesSection: {
     eyebrow: 'Was wir tun',
-    title: 'Zehn Leistungsbereiche, ein Umsetzungsteam.',
+    title: 'Neun Leistungsbereiche, ein Umsetzungsteam.',
     lead: 'Keine Übergaben zwischen Agenturen, keine Subunternehmer, die Sie nie zu sehen bekommen. Wer Ihr Projekt zuschneidet, baut es auch.',
     allServices: 'Alle Leistungen',
     from: (price: string) => `Ab ${price}`,
@@ -245,7 +245,7 @@ export const de: Dictionary = {
     },
     services: {
       eyebrow: 'Leistungen',
-      title: 'Zehn Arten zu helfen – und der Punkt, ab dem sich jede nicht mehr lohnt.',
+      title: 'Neun Arten zu helfen – und der Punkt, ab dem sich jede nicht mehr lohnt.',
       lead: 'Die meisten Projekte kombinieren zwei oder drei davon. Wenn ein günstigeres Werkzeug Ihr Problem löst, sagen wir das im ersten Gespräch und schicken Ihnen den Link.',
       metaTitle: 'Leistungen',
       metaDescription:
@@ -257,7 +257,7 @@ export const de: Dictionary = {
       lead: 'Jedes Projekt hier ist mit Zustimmung des Kunden veröffentlicht, inklusive der Zahlen. Filtern Sie nach Typ oder suchen Sie nach Technologie.',
       metaTitle: 'Portfolio',
       metaDescription:
-        'Ausgewählte Arbeiten von Arclight: Dispositionsplattformen für Speditionen, klinische KI-Triage, Investorenportale, Headless Commerce, mobile Außendienst-Apps und Onboarding-Automatisierung.',
+        'Ausgewählte Arbeiten von ARCHON: Dispositionsplattformen für Speditionen, klinische KI-Triage, Investorenportale, Headless Commerce, mobile Außendienst-Apps und Onboarding-Automatisierung.',
     },
     caseStudies: {
       eyebrow: 'Fallstudien',
@@ -265,7 +265,7 @@ export const de: Dictionary = {
       lead: 'Problem, Lösung, Technologien, Ergebnisse. Gemeinsam mit dem Kunden geschrieben und mit dessen Freigabe veröffentlicht.',
       metaTitle: 'Fallstudien',
       metaDescription:
-        'Ausführliche Berichte zu Arclight-Projekten: das Problem, die Lösung, die Technologien und die gemessenen Ergebnisse — einschließlich dessen, was länger gedauert hat als geplant.',
+        'Ausführliche Berichte zu ARCHON-Projekten: das Problem, die Lösung, die Technologien und die gemessenen Ergebnisse — einschließlich dessen, was länger gedauert hat als geplant.',
     },
     blog: {
       eyebrow: 'Texte',
@@ -273,7 +273,7 @@ export const de: Dictionary = {
       lead: 'Was wir in echten Projekten gelernt haben, samt der Entscheidungen, die wir heute anders treffen würden. Eine Ausgabe pro Monat, keine Kampagnenstrecken.',
       metaTitle: 'Blog',
       metaDescription:
-        'Engineering-Notizen des Arclight-Teams zu KI-Evaluation, Performance im Feld, Übergabequalität, Software für den Außendienst und ehrlicher Aufwandsschätzung.',
+        'Engineering-Notizen des ARCHON-Teams zu KI-Evaluation, Performance im Feld, Übergabequalität, Software für den Außendienst und ehrlicher Aufwandsschätzung.',
     },
     about: {
       eyebrow: 'Über uns',
@@ -282,7 +282,7 @@ export const de: Dictionary = {
         `Gegründet ${founded}. Wir arbeiten in kleinen, erfahrenen Teams, veröffentlichen die Zahlen, die unsere Kunden freigeben, und messen uns daran, ob Ihre Entwickler ein halbes Jahr später weiterbauen können, was wir gebaut haben.`,
       metaTitle: 'Über uns',
       metaDescription:
-        'Arclight ist ein Software-Studio mit 14 Mitarbeitenden, gegründet 2017. Wir arbeiten in kleinen, erfahrenen Teams, veröffentlichen unsere Zahlen und übergeben Code, den Ihre eigenen Entwickler erweitern können.',
+        'ARCHON ist ein Software-Studio mit 14 Mitarbeitenden, gegründet 2017. Wir arbeiten in kleinen, erfahrenen Teams, veröffentlichen unsere Zahlen und übergeben Code, den Ihre eigenen Entwickler erweitern können.',
       principlesEyebrow: 'Wie wir arbeiten',
       principlesTitle: 'Vier Zusagen, für die wir Aufträge abgelehnt haben.',
       principlesLead:
@@ -351,7 +351,7 @@ export const de: Dictionary = {
       lead: 'Schicken Sie uns die Details, oder buchen Sie direkt einen Termin. So oder so sprechen Sie zuerst mit einem technischen Lead — eine Qualifizierungsschleife gibt es bei uns nicht.',
       metaTitle: 'Kontakt',
       metaDescription:
-        'Starten Sie ein Projekt mit Arclight. Schreiben Sie uns oder buchen Sie 30 Minuten direkt im Kalender eines technischen Leads — ohne vorgeschaltetes Qualifizierungsgespräch.',
+        'Starten Sie ein Projekt mit ARCHON. Schreiben Sie uns oder buchen Sie 30 Minuten direkt im Kalender eines technischen Leads — ohne vorgeschaltetes Qualifizierungsgespräch.',
       formHeading: 'Anfrageformular',
       details: {
         email: 'E-Mail',
@@ -420,7 +420,7 @@ export const de: Dictionary = {
     messagePlaceholder:
       'Wir koordinieren täglich 4.000 Frachtaufträge über Tabellen, und zwei Depots nehmen immer wieder denselben Auftrag an…',
     consent:
-      'Arclight darf mir zu dieser Anfrage schreiben. Keine Verteiler, keine Weitergabe an Dritte.',
+      'ARCHON darf mir zu dieser Anfrage schreiben. Keine Verteiler, keine Weitergabe an Dritte.',
     submit: 'Nachricht senden',
     sending: 'Wird gesendet',
     sentTitle: 'Nachricht gesendet',
@@ -428,7 +428,7 @@ export const de: Dictionary = {
       'Jede Anfrage liest ein Mensch — die Antwort kommt meist innerhalb eines Werktags. Wenn es eilt, buchen Sie über den Kalenderlink auf dieser Seite direkt einen Termin.',
     sendAnother: 'Weitere Nachricht senden',
     failed:
-      'Das hat nicht geklappt. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut, oder schreiben Sie direkt an hello@arclight.studio.',
+      'Das hat nicht geklappt. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut, oder schreiben Sie direkt an hello@archon.studio.',
     topics: {
       newProject: 'Ein neues Produkt oder eine neue Website',
       existingProduct: 'Etwas Bestehendes verbessern',

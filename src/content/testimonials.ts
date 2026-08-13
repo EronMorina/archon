@@ -21,42 +21,42 @@ const base: TestimonialBase[] = [
     author: 'Marta Kowalczyk',
     company: 'Northwind Logistics',
     initials: 'MK',
-    avatarClass: 'from-arc-blue to-arc-violet',
+    avatarClass: 'from-apex-strong to-apex-mid',
   },
   {
     id: 'lumen',
     author: 'Dr. Priya Raman',
     company: 'Lumen Health',
     initials: 'PR',
-    avatarClass: 'from-arc-violet to-arc-cyan',
+    avatarClass: 'from-apex-mid to-apex-soft',
   },
   {
     id: 'atlas',
     author: 'Daniel Osei',
     company: 'Atlas Capital',
     initials: 'DO',
-    avatarClass: 'from-arc-cyan to-arc-blue',
+    avatarClass: 'from-apex-soft to-apex-strong',
   },
   {
     id: 'verdance',
     author: 'Amelia Fournier',
     company: 'Verdance',
     initials: 'AF',
-    avatarClass: 'from-arc-blue to-arc-cyan',
+    avatarClass: 'from-apex-strong to-apex-soft',
   },
   {
     id: 'cadence',
     author: 'Tom Bridger',
     company: 'Cadence Utilities',
     initials: 'TB',
-    avatarClass: 'from-arc-violet to-arc-blue',
+    avatarClass: 'from-apex-mid to-apex-strong',
   },
   {
     id: 'meridian',
     author: 'Sarah Lindqvist',
     company: 'Meridian Advisory',
     initials: 'SL',
-    avatarClass: 'from-arc-cyan to-arc-violet',
+    avatarClass: 'from-apex-soft to-apex-mid',
   },
 ]
 
@@ -69,7 +69,7 @@ const copy: Record<Locale, Record<TestimonialId, TestimonialCopy>> = {
     },
     lumen: {
       quote:
-        'Arclight refused to launch until the evaluation numbers satisfied our clinical governance board. No vendor had ever pushed back on our timeline for the right reason before.',
+        'ARCHON refused to launch until the evaluation numbers satisfied our clinical governance board. No vendor had ever pushed back on our timeline for the right reason before.',
       role: 'Clinical Director',
     },
     atlas: {
@@ -102,7 +102,7 @@ const copy: Record<Locale, Record<TestimonialId, TestimonialCopy>> = {
     },
     lumen: {
       quote:
-        'Arclight weigerte sich zu starten, bis die Evaluationszahlen unser klinisches Governance-Gremium zufriedenstellten. Kein Dienstleister hatte je zuvor aus dem richtigen Grund gegen unseren Zeitplan argumentiert.',
+        'ARCHON weigerte sich zu starten, bis die Evaluationszahlen unser klinisches Governance-Gremium zufriedenstellten. Kein Dienstleister hatte je zuvor aus dem richtigen Grund gegen unseren Zeitplan argumentiert.',
       role: 'Ärztliche Direktorin',
     },
     atlas: {
@@ -135,7 +135,7 @@ const copy: Record<Locale, Record<TestimonialId, TestimonialCopy>> = {
     },
     lumen: {
       quote:
-        'Arclight a refusé de lancer tant que les chiffres d’évaluation ne satisfaisaient pas notre comité de gouvernance clinique. Aucun prestataire n’avait jamais contesté notre calendrier pour la bonne raison.',
+        'ARCHON a refusé de lancer tant que les chiffres d’évaluation ne satisfaisaient pas notre comité de gouvernance clinique. Aucun prestataire n’avait jamais contesté notre calendrier pour la bonne raison.',
       role: 'Directrice médicale',
     },
     atlas: {

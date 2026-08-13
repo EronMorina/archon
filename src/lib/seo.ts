@@ -50,7 +50,7 @@ export function buildMetadata({
       title,
       description,
       images: [ogImage],
-      creator: '@arclightstudio',
+      creator: '@archonstudio',
     },
   }
 }

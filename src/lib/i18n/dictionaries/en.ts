@@ -13,7 +13,7 @@ export const en = {
   site: {
     tagline: 'Building software that moves businesses forward.',
     description:
-      'Arclight is a software studio that designs and builds websites, custom web applications, AI-powered solutions and business automation for startups and growing companies.',
+      'ARCHON is a software studio that designs and builds websites, custom web applications, AI-powered solutions and business automation for startups and growing companies.',
     remoteFirst: 'Remote-first',
   },
 
@@ -90,7 +90,7 @@ export const en = {
       note: 'One engineering note a month. No sequences, no sales drips.',
       invalid: 'Enter an email address we can reach you at.',
       success: 'You are on the list. One issue a month.',
-      failed: 'That did not send. Try again, or email hello@arclight.studio.',
+      failed: 'That did not send. Try again, or email hello@archon.studio.',
     },
   },
 
@@ -127,7 +127,7 @@ export const en = {
 
   servicesSection: {
     eyebrow: 'What we do',
-    title: 'Ten service lines, one delivery team.',
+    title: 'Nine service lines, one delivery team.',
     lead: 'No handoffs between agencies, no subcontractors you never meet. The people who scope your project are the people who build it.',
     allServices: 'All services',
     from: (price: string) => `From ${price}`,
@@ -247,7 +247,7 @@ export const en = {
     },
     services: {
       eyebrow: 'Services',
-      title: 'Ten ways we help, and the point at which each stops being worth it.',
+      title: 'Nine ways we help, and the point at which each stops being worth it.',
       lead: 'Most engagements combine two or three of these. If a cheaper tool would solve your problem, we will tell you on the first call and send you the link.',
       metaTitle: 'Services',
       metaDescription:
@@ -259,7 +259,7 @@ export const en = {
       lead: "Every project below is published with its client's permission, including the numbers. Filter by type or search by technology.",
       metaTitle: 'Portfolio',
       metaDescription:
-        'Selected work from Arclight: freight dispatch platforms, clinical AI triage, investor portals, headless commerce, field mobile apps and onboarding automation.',
+        'Selected work from ARCHON: freight dispatch platforms, clinical AI triage, investor portals, headless commerce, field mobile apps and onboarding automation.',
     },
     caseStudies: {
       eyebrow: 'Case studies',
@@ -267,7 +267,7 @@ export const en = {
       lead: 'Problem, solution, technologies, results. Written with the client and published with their sign-off.',
       metaTitle: 'Case studies',
       metaDescription:
-        'Full write-ups of Arclight engagements: the problem, the solution, the technologies and the measured results — including what took longer than planned.',
+        'Full write-ups of ARCHON engagements: the problem, the solution, the technologies and the measured results — including what took longer than planned.',
     },
     blog: {
       eyebrow: 'Writing',
@@ -275,7 +275,7 @@ export const en = {
       lead: 'What we learned on real engagements, including the decisions we would make differently. One issue a month, no sequences.',
       metaTitle: 'Blog',
       metaDescription:
-        'Engineering notes from the Arclight team on AI evaluation, real-user performance, handover quality, field software design and honest scoping.',
+        'Engineering notes from the ARCHON team on AI evaluation, real-user performance, handover quality, field software design and honest scoping.',
     },
     about: {
       eyebrow: 'About',
@@ -284,7 +284,7 @@ export const en = {
         `Founded in ${founded}. We work in small senior teams, publish the numbers our clients agree to share, and measure ourselves on whether your engineers can extend what we built six months later.`,
       metaTitle: 'About',
       metaDescription:
-        'Arclight is a 14-person software studio founded in 2017. We work in small senior teams, publish our numbers, and hand over code your own engineers can extend.',
+        'ARCHON is a 14-person software studio founded in 2017. We work in small senior teams, publish our numbers, and hand over code your own engineers can extend.',
       principlesEyebrow: 'How we operate',
       principlesTitle: 'Four commitments we have turned down work over.',
       principlesLead:
@@ -352,7 +352,7 @@ export const en = {
       lead: 'Send the details below, or book a slot directly. Either way you speak to a technical lead first — we do not run a qualification layer.',
       metaTitle: 'Contact',
       metaDescription:
-        'Start a project with Arclight. Send a message or book a 30-minute call straight into a technical lead’s calendar — no qualification call first.',
+        'Start a project with ARCHON. Send a message or book a 30-minute call straight into a technical lead’s calendar — no qualification call first.',
       formHeading: 'Enquiry form',
       details: {
         email: 'Email',
@@ -420,14 +420,14 @@ export const en = {
     messageLabel: 'What are you trying to solve?',
     messagePlaceholder:
       'We coordinate 4,000 daily freight loads through spreadsheets, and two depots keep accepting the same load…',
-    consent: 'Arclight may email me about this enquiry. No marketing lists, and no sharing with anyone else.',
+    consent: 'ARCHON may email me about this enquiry. No marketing lists, and no sharing with anyone else.',
     submit: 'Send message',
     sending: 'Sending',
     sentTitle: 'Message sent',
     sentBody:
       'A person reads every enquiry — usually a reply within one business day. If it is urgent, the calendar link on this page books straight into a slot.',
     sendAnother: 'Send another message',
-    failed: 'That did not send. Check your connection and try again, or email hello@arclight.studio directly.',
+    failed: 'That did not send. Check your connection and try again, or email hello@archon.studio directly.',
     topics: {
       newProject: 'A new product or site',
       existingProduct: 'Improving something live',

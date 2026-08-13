@@ -40,7 +40,7 @@ export function NewsletterForm() {
   if (state === 'done') {
     return (
       <p className="flex items-center gap-2 text-sm text-foreground">
-        <Check className="size-4 text-arc-cyan" aria-hidden />
+        <Check className="size-4 text-apex-soft" aria-hidden />
         {message}
       </p>
     )

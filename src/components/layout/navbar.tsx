@@ -50,7 +50,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-arc',
+        'fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-apex',
         scrolled ? 'border-b border-border/70 bg-background/70 backdrop-blur-xl backdrop-saturate-150' : 'bg-transparent'
       )}
     >
@@ -73,7 +73,7 @@ export function Navbar() {
                 {isActive(item.href) && (
                   <motion.span
                     layoutId="nav-active"
-                    className="absolute inset-x-3 -bottom-px h-px bg-arc-gradient"
+                    className="absolute inset-x-3 -bottom-px h-px bg-apex-gradient"
                     transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                   />
                 )}
@@ -85,10 +85,10 @@ export function Navbar() {
         <div className="flex items-center gap-1.5">
           <LanguageSwitcher />
           <ThemeToggle />
-          <Button asChild variant="arc" size="sm" className="group hidden lg:inline-flex">
+          <Button asChild variant="apex" size="sm" className="group hidden lg:inline-flex">
             <Link href={localePath(locale, '/contact')}>
               {t.nav.cta}
-              <ArrowRight className="transition-transform duration-300 ease-arc group-hover:translate-x-0.5" />
+              <ArrowRight className="transition-transform duration-300 ease-apex group-hover:translate-x-0.5" />
             </Link>
           </Button>
 
@@ -133,7 +133,7 @@ export function Navbar() {
                 </li>
               ))}
               <li className="pt-5">
-                <Button asChild variant="arc" size="lg" className="w-full">
+                <Button asChild variant="apex" size="lg" className="w-full">
                   <Link href={localePath(locale, '/contact')}>{t.nav.cta}</Link>
                 </Button>
               </li>

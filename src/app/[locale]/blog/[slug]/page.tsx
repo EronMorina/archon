@@ -7,7 +7,7 @@ import { getDictionary } from '@/lib/i18n'
 import { localeMeta, toLocale } from '@/lib/i18n/config'
 import { localePath } from '@/lib/i18n/paths'
 import { formatDate } from '@/lib/utils'
-import { ArcBackdrop } from '@/components/ui/arc-backdrop'
+import { ApexBackdrop } from '@/components/ui/apex-backdrop'
 import { Reveal } from '@/components/ui/reveal'
 import { Cta } from '@/components/sections/cta'
 import { NotFoundView } from '@/components/layout/not-found-view'
@@ -59,7 +59,7 @@ export default function PostPage({ params }: { params: { locale: string; slug: s
 
       <article>
         <header className="relative isolate overflow-hidden border-b border-border pb-14 pt-32 md:pt-40">
-          <ArcBackdrop intensity="soft" />
+          <ApexBackdrop intensity="soft" />
           <div className="container relative max-w-3xl">
             <Link
               href={localePath(locale, '/blog')}
@@ -85,7 +85,7 @@ export default function PostPage({ params }: { params: { locale: string; slug: s
             <div className="mt-9 flex items-center gap-3 border-t border-border pt-7">
               <span
                 aria-hidden
-                className="flex size-10 items-center justify-center rounded-full bg-gradient-to-br from-arc-blue to-arc-violet font-mono text-xs text-white"
+                className="flex size-10 items-center justify-center rounded-full bg-gradient-to-br from-apex-strong to-apex-mid font-mono text-xs text-background"
               >
                 {post.author.initials}
               </span>
@@ -127,7 +127,7 @@ export default function PostPage({ params }: { params: { locale: string; slug: s
                 <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">{item.excerpt}</p>
                 <span className="mt-5 inline-flex items-center gap-1.5 text-sm text-primary">
                   {t.post.read}
-                  <ArrowRight className="size-4 transition-transform duration-300 ease-arc group-hover:translate-x-1" />
+                  <ArrowRight className="size-4 transition-transform duration-300 ease-apex group-hover:translate-x-1" />
                 </span>
               </Link>
             ))}

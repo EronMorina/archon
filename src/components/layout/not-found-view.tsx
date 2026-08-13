@@ -3,7 +3,7 @@ import { getDictionary } from '@/lib/i18n'
 import { localePath } from '@/lib/i18n/paths'
 import type { Locale } from '@/lib/i18n/config'
 import { Button } from '@/components/ui/button'
-import { ArcBackdrop } from '@/components/ui/arc-backdrop'
+import { ApexBackdrop } from '@/components/ui/apex-backdrop'
 
 /**
  * The 404 page body, as a server component that is handed its locale.
@@ -21,16 +21,16 @@ export function NotFoundView({ locale }: { locale: Locale }) {
 
   return (
     <section className="relative isolate overflow-hidden">
-      <ArcBackdrop intensity="soft" />
+      <ApexBackdrop intensity="soft" />
       <div className="container relative flex min-h-[70vh] flex-col items-center justify-center py-32 text-center">
         <p className="eyebrow">
-          <span aria-hidden className="h-px w-7 bg-arc-gradient" />
+          <span aria-hidden className="h-px w-7 bg-apex-gradient" />
           {t.eyebrow}
         </p>
         <h1 className="mt-6 text-display-sm md:text-display-md">{t.title}</h1>
         <p className="mt-5 max-w-md text-lg text-muted-foreground">{t.lead}</p>
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-          <Button asChild variant="arc" size="lg">
+          <Button asChild variant="apex" size="lg">
             <Link href={localePath(locale, '/')}>{t.home}</Link>
           </Button>
           <Button asChild variant="outline" size="lg">

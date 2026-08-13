@@ -7,8 +7,8 @@ import { Button } from '@/components/ui/button'
 import { localePath } from '@/lib/i18n/paths'
 import { useDictionary, useLocale } from './locale-provider'
 
-export const CONSENT_KEY = 'arclight-consent'
-const CONSENT_EVENT = 'arclight-consent-change'
+export const CONSENT_KEY = 'archon-consent'
+const CONSENT_EVENT = 'archon-consent-change'
 
 export type ConsentValue = 'granted' | 'denied'
 
@@ -63,7 +63,7 @@ export function CookieConsent() {
               <Button variant="ghost" size="sm" onClick={() => decide('denied')}>
                 {t.decline}
               </Button>
-              <Button variant="arc" size="sm" onClick={() => decide('granted')}>
+              <Button variant="apex" size="sm" onClick={() => decide('granted')}>
                 {t.accept}
               </Button>
             </div>

@@ -27,7 +27,7 @@ export function Testimonials({ locale }: { locale: Locale }) {
         <div className="mt-14 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {getTestimonials(locale).map((testimonial, i) => (
             <Reveal key={testimonial.id} delay={(i % 3) * 0.08} className="h-full">
-              <figure className="arc-ring relative flex h-full flex-col rounded-xl border border-border bg-card p-6 transition-colors duration-500 hover:border-transparent">
+              <figure className="apex-ring relative flex h-full flex-col rounded-xl border border-border bg-card p-6 transition-colors duration-500 hover:border-transparent">
                 <svg
                   aria-hidden
                   viewBox="0 0 24 24"
@@ -43,7 +43,7 @@ export function Testimonials({ locale }: { locale: Locale }) {
                   <span
                     aria-hidden
                     className={cn(
-                      'flex size-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br font-mono text-xs font-medium text-white',
+                      'flex size-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br font-mono text-xs font-medium text-background',
                       testimonial.avatarClass
                     )}
                   >

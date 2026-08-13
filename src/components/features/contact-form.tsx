@@ -65,8 +65,8 @@ export function ContactForm() {
   if (state === 'sent') {
     return (
       <div className="rounded-xl border border-border bg-card p-10 text-center">
-        <span className="mx-auto flex size-12 items-center justify-center rounded-full bg-arc-gradient">
-          <Check className="size-6 text-white" aria-hidden />
+        <span className="mx-auto flex size-12 items-center justify-center rounded-full bg-apex-gradient">
+          <Check className="size-6 text-background" aria-hidden />
         </span>
         <h2 className="mt-6 text-2xl">{t.sentTitle}</h2>
         <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">{t.sentBody}</p>
@@ -183,7 +183,7 @@ export function ContactForm() {
         </span>
       </label>
 
-      <Button type="submit" variant="arc" size="lg" disabled={state === 'sending'} className="group w-full sm:w-auto">
+      <Button type="submit" variant="apex" size="lg" disabled={state === 'sending'} className="group w-full sm:w-auto">
         {state === 'sending' ? (
           <>
             <Loader2 className="animate-spin" aria-hidden />
@@ -192,7 +192,7 @@ export function ContactForm() {
         ) : (
           <>
             {t.submit}
-            <ArrowRight className="transition-transform duration-300 ease-arc group-hover:translate-x-1" />
+            <ArrowRight className="transition-transform duration-300 ease-apex group-hover:translate-x-1" />
           </>
         )}
       </Button>

@@ -1,9 +1,11 @@
 import type { Config } from 'tailwindcss'
 
 /**
- * Arclight design system.
+ * ARCHON design system.
  * Every colour is an HSL triplet exposed as a CSS variable in globals.css so a
  * single `.dark` class flips the whole palette with no duplicated utilities.
+ * The palette is monochrome — see globals.css for why the accent ramp is
+ * anchored to the foreground rather than to a fixed colour.
  */
 const config: Config = {
   darkMode: ['class'],
@@ -29,11 +31,11 @@ const config: Config = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        /* Arc — the studio's signature light. Used for beams and gradients only. */
-        arc: {
-          blue: 'hsl(var(--arc-blue))',
-          violet: 'hsl(var(--arc-violet))',
-          cyan: 'hsl(var(--arc-cyan))',
+        /* Apex — the mark's value ramp. Used for accents and gradients only. */
+        apex: {
+          strong: 'hsl(var(--apex-strong))',
+          mid: 'hsl(var(--apex-mid))',
+          soft: 'hsl(var(--apex-soft))',
         },
       },
       borderRadius: {
@@ -58,10 +60,15 @@ const config: Config = {
       },
       boxShadow: {
         glass: '0 1px 0 0 hsl(var(--hairline)) inset, 0 24px 60px -30px rgb(0 0 0 / 0.45)',
-        lift: '0 30px 70px -40px hsl(var(--arc-violet) / 0.55)',
+        lift: '0 30px 70px -40px hsl(var(--foreground) / 0.35)',
       },
       backgroundImage: {
-        'arc-gradient': 'linear-gradient(100deg, hsl(var(--arc-blue)), hsl(var(--arc-violet)) 55%, hsl(var(--arc-cyan)))',
+        /*
+          A value ramp, not a colour one: dark on paper, light on ink. Anything
+          placed on it must use `text-background` so it inverts in step.
+        */
+        'apex-gradient':
+          'linear-gradient(100deg, hsl(var(--apex-strong)), hsl(var(--apex-mid)) 55%, hsl(var(--apex-strong)))',
         'hairline-grid':
           'linear-gradient(to right, hsl(var(--hairline)) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--hairline)) 1px, transparent 1px)',
       },
@@ -70,7 +77,7 @@ const config: Config = {
           '0%, 100%': { transform: 'translate3d(-4%, 0, 0) scale(1)' },
           '50%': { transform: 'translate3d(4%, -3%, 0) scale(1.08)' },
         },
-        'arc-sweep': {
+        'apex-sweep': {
           '0%': { transform: 'translateX(-120%)' },
           '100%': { transform: 'translateX(120%)' },
         },
@@ -96,7 +103,7 @@ const config: Config = {
       },
       animation: {
         'aurora-drift': 'aurora-drift 18s ease-in-out infinite',
-        'arc-sweep': 'arc-sweep 6s cubic-bezier(0.4, 0, 0.2, 1) infinite',
+        'apex-sweep': 'apex-sweep 6s cubic-bezier(0.4, 0, 0.2, 1) infinite',
         float: 'float 7s ease-in-out infinite',
         marquee: 'marquee var(--marquee-duration, 40s) linear infinite',
         'accordion-down': 'accordion-down 220ms cubic-bezier(0.32, 0.72, 0, 1)',
@@ -104,7 +111,7 @@ const config: Config = {
         shimmer: 'shimmer 1.6s infinite',
       },
       transitionTimingFunction: {
-        arc: 'cubic-bezier(0.22, 1, 0.36, 1)',
+        apex: 'cubic-bezier(0.22, 1, 0.36, 1)',
       },
     },
   },

@@ -1,4 +1,4 @@
-# Arclight — software studio website
+# ARCHON — software studio website
 
 A production-ready marketing site for a software development agency. Next.js App Router,
 TypeScript, Tailwind, Framer Motion, shadcn/ui primitives, Lucide icons.
@@ -11,18 +11,29 @@ npm run dev                  # http://localhost:3000
 
 ## Design system
 
-Named **Arclight** because the signature element is an arc of light: a soft elliptical
-bloom with a 1px luminous curve at its horizon, and a highlight that sweeps along it.
-It recurs at four scales — hero backdrop, section eyebrow rules, the process timeline's
-filling progress line, and the closing CTA — so the brand is structural rather than decorative.
+Monochrome, matching the mark. The signature element is the **apex**: a chevron drawn as
+two strokes meeting at a point, with a solid triangle nested at its base. It recurs at four
+scales — the logo, the hero backdrop's hairline chevron, section eyebrow rules, and the
+closing CTA — so the brand is structural rather than decorative.
 
-| Token | Value | Role |
-| --- | --- | --- |
-| Ink | `hsl(231 24% 5%)` | Dark canvas |
-| Paper | `hsl(240 20% 99%)` | Light canvas |
-| Arc blue | `hsl(231 92% 62%)` | Gradient start, primary |
-| Arc violet | `hsl(262 88% 66%)` | Gradient middle, glow |
-| Arc cyan | `hsl(189 88% 55%)` | Gradient end, confirmations |
+The palette carries no hue at all, only value. What saturation remains (6–12%) keeps greys
+from looking muddy on OLED and cheap LCDs, and sits below the point where anyone would call
+it a colour. Because the system is value-based, light and dark are true inversions rather
+than two separately tuned palettes.
+
+| Token | Light | Dark | Role |
+| --- | --- | --- | --- |
+| Background | `hsl(220 14% 99%)` | `hsl(220 14% 5%)` | Paper / ink canvas |
+| Foreground | `hsl(220 12% 8%)` | `hsl(220 10% 95%)` | Body text, and the source of every accent |
+| Apex strong | `hsl(220 12% 10%)` | `hsl(220 10% 97%)` | Ramp anchor, primary surfaces |
+| Apex mid | `hsl(220 8% 32%)` | `hsl(220 8% 74%)` | Ramp midpoint, glows |
+| Apex soft | `hsl(220 7% 46%)` | `hsl(220 7% 58%)` | Confirmations, quiet marks |
+| Destructive | `hsl(356 72% 47%)` | `hsl(356 76% 60%)` | The one surviving hue — errors must not rely on value alone |
+
+`--apex-*` is a **value** ramp, not a colour one, so `bg-apex-gradient` is dark on paper and
+light on ink. Anything placed on it uses `text-background` so it inverts in step — a
+hard-coded `text-white` is only legible in one of the two themes, which is why the `apex`
+button variant and every avatar avoid it.
 
 Typography: **Instrument Sans** for display (tight, −0.035em at large sizes), **Inter** for
 body, **IBM Plex Mono** for eyebrows, metrics and labels. All self-hosted via `next/font`
@@ -55,7 +66,7 @@ src/
 ├── components/
 │   ├── ui/                     Button, Card, Badge, Input, Textarea, Label,
 │   │                           Accordion, DropdownMenu, Skeleton, Reveal,
-│   │                           Counter, SectionHeading, ArcBackdrop
+│   │                           Counter, SectionHeading, ApexBackdrop
 │   ├── layout/                 Navbar, Footer, Logo, ThemeToggle, LanguageSwitcher,
 │   │                           ScrollProgress, CookieConsent, Analytics,
 │   │                           PageHeader, Newsletter, LocaleProvider, MotionProvider
@@ -118,7 +129,7 @@ properly means either moving `<html>` into a root `app/layout.tsx` — which cos
 
 | Variable | Required | Purpose |
 | --- | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | recommended | Canonicals, sitemap, OG URLs. Absolute origin, e.g. `https://arclight.studio`. A missing scheme is assumed to be `https`, a trailing slash is dropped, and blank counts as unset — leave it out entirely and it falls back to the production domain |
+| `NEXT_PUBLIC_SITE_URL` | recommended | Canonicals, sitemap, OG URLs. Absolute origin, e.g. `https://archon.studio`. A missing scheme is assumed to be `https`, a trailing slash is dropped, and blank counts as unset — leave it out entirely and it falls back to the production domain |
 | `NEXT_PUBLIC_CALENDLY_URL` | optional | Inline scheduling widget |
 | `NEXT_PUBLIC_GA_ID` | optional | GA4, loaded only after consent |
 | `RESEND_API_KEY` | optional | Contact form delivery |
@@ -136,7 +147,7 @@ success, so the form is testable locally with no credentials.
   and `aria-describedby`, and the first invalid field receives focus on failed submit
 - The marquee duplicate track is `aria-hidden` with a plain text list for screen readers
 - `prefers-reduced-motion` is respected without branching the rendered tree, which would
-  break hydration. CSS stops the arc sweep, aurora drift and marquee; Framer Motion's
+  break hydration. CSS stops the apex sweep, bloom drift and marquee; Framer Motion's
   `<MotionConfig reducedMotion="user">` snaps every transform, width and height so only
   opacity cross-fades remain; counters jump to their final value; the process line fills
   in one step (`useReducedMotionSafe`, which stays `false` until after hydration)

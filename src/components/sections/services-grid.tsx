@@ -65,7 +65,7 @@ export function ServicesGrid({
                   <span className="flex size-11 items-center justify-center rounded-lg border border-border bg-card transition-colors duration-500 group-hover:border-primary/40">
                     <service.icon className="size-[18px] text-primary" aria-hidden />
                   </span>
-                  <ArrowUpRight className="size-4 -translate-y-0.5 text-muted-foreground opacity-0 transition-all duration-500 ease-arc group-hover:translate-y-0 group-hover:opacity-100" />
+                  <ArrowUpRight className="size-4 -translate-y-0.5 text-muted-foreground opacity-0 transition-all duration-500 ease-apex group-hover:translate-y-0 group-hover:opacity-100" />
                 </div>
 
                 <h3 className="mt-6 text-lg">{service.title}</h3>
@@ -78,7 +78,7 @@ export function ServicesGrid({
                     <ul className="mt-6 space-y-2.5">
                       {service.benefits.map((benefit) => (
                         <li key={benefit} className="flex gap-2.5 text-sm text-muted-foreground">
-                          <Check className="mt-0.5 size-4 shrink-0 text-arc-cyan" aria-hidden />
+                          <Check className="mt-0.5 size-4 shrink-0 text-apex-soft" aria-hidden />
                           <span>{benefit}</span>
                         </li>
                       ))}
