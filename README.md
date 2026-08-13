@@ -177,6 +177,15 @@ the production build — `next dev` scores considerably lower by design.
    The `repoUrl` / `liveUrl` on two of them point at `example.com` and a fictional GitHub
    org — replace or delete. Both are optional: omit either and its link stops rendering,
    which is the normal case for closed-source client work.
-3. Team members in `src/app/about/page.tsx`.
-4. Project artwork in `public/images/projects/` — generated placeholders; swap for real
+3. Contact details in `src/lib/site.ts` — `phone` is a reserved fictional number
+   (555-0132) and `address` is an invented San Francisco office. Neither is shown on the
+   contact page any more, but **both are still published in the Schema.org graph on every
+   page**, and the city still appears in the footer. Structured data is what search engines
+   read, so invented location data is worse than none: either replace both with real
+   details, or delete `phone` and `address` and strip `telephone` / `PostalAddress` from
+   `organisationSchema` in `src/lib/seo.ts` and the contact page schema.
+4. Team members in `src/app/[locale]/about/page.tsx` — names, initials and avatar gradients
+   live in that file; their roles and focus areas are in `pages.about.team` in each
+   dictionary, so a new hire needs editing in four places.
+5. Project artwork in `public/images/projects/` — generated placeholders; swap for real
    screenshots (keep the 16:10 ratio).
