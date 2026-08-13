@@ -17,14 +17,20 @@ export function Pricing({ locale }: { locale: Locale }) {
       <div className="container">
         <SectionHeading eyebrow={t.eyebrow} title={t.title} lead={t.lead} align="center" />
 
-        <div className="mt-14 grid items-start gap-6 lg:grid-cols-3">
+        {/*
+          Four tiers: two-up from `sm`, four-up from `xl`. Both divide evenly,
+          so no row is ever left with a dead cell. The highlighted card only
+          lifts in the four-across layout — in the 2x2 grid it would just look
+          misaligned against its neighbour.
+        */}
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {getPlans(locale).map((plan, i) => (
             <Reveal key={plan.id} delay={i * 0.08} className="h-full">
               <div
                 className={cn(
                   'relative flex h-full flex-col rounded-xl border bg-card p-7 transition-all duration-500 ease-arc',
                   plan.highlighted
-                    ? 'border-primary/40 shadow-lift lg:-mt-4 lg:pb-10'
+                    ? 'border-primary/40 shadow-lift xl:-mt-4 xl:pb-10'
                     : 'border-border hover:border-foreground/20'
                 )}
               >
@@ -37,15 +43,19 @@ export function Pricing({ locale }: { locale: Locale }) {
                 <h3 className="text-lg">{plan.name}</h3>
                 <p className="mt-1.5 text-sm text-muted-foreground">{plan.pitch}</p>
 
-                <p className="mt-6 flex items-baseline gap-2">
-                  <span className="font-display text-4xl font-semibold tracking-tight">{plan.price}</span>
-                  <span className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
-                    {plan.cadence}
-                  </span>
+                {/*
+                  A range is far wider than the single figure this used to
+                  show, so the price drops to text-2xl and the cadence moves
+                  below it rather than sitting alongside. whitespace-nowrap
+                  keeps a range from breaking across its en dash.
+                */}
+                <p className="mt-6 whitespace-nowrap font-display text-2xl font-semibold tracking-tight">
+                  {plan.price}
                 </p>
-                <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-                  {plan.bestFor}
+                <p className="mt-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
+                  {plan.cadence}
                 </p>
+                <p className="mt-3 border-t border-border pt-3 text-xs text-muted-foreground">{plan.bestFor}</p>
 
                 <ul className="mt-7 flex-1 space-y-3">
                   {plan.features.map((feature) => (

@@ -7,7 +7,6 @@ import {
   LayoutDashboard,
   LifeBuoy,
   Search,
-  ShoppingBag,
   Smartphone,
   type LucideIcon,
 } from 'lucide-react'
@@ -27,7 +26,6 @@ export type ServiceSlug =
   | 'ai-integrations'
   | 'business-automation'
   | 'mobile-applications'
-  | 'e-commerce-solutions'
   | 'ui-ux-design'
   | 'cloud-deployment'
   | 'maintenance-support'
@@ -52,7 +50,6 @@ const base: ServiceBase[] = [
   { slug: 'ai-integrations', icon: Bot, startingAt: '$28k' },
   { slug: 'business-automation', icon: Cog, startingAt: '$18k' },
   { slug: 'mobile-applications', icon: Smartphone, startingAt: '$40k' },
-  { slug: 'e-commerce-solutions', icon: ShoppingBag, startingAt: '$22k' },
   { slug: 'ui-ux-design', icon: LayoutDashboard, startingAt: '$15k' },
   { slug: 'cloud-deployment', icon: Cloud, startingAt: '$14k' },
   { slug: 'maintenance-support', icon: LifeBuoy, startingAt: '$3k/mo' },
@@ -120,18 +117,6 @@ const copy: Record<Locale, Record<ServiceSlug, ServiceCopy>> = {
         'Over-the-air updates without a store review cycle',
       ],
       deliverables: ['Design system', 'App builds', 'Store listings', 'Release pipeline'],
-    },
-    'e-commerce-solutions': {
-      title: 'E-Commerce Solutions',
-      summary: 'Storefronts tuned for conversion rate, not just page speed.',
-      description:
-        'Headless commerce on Shopify or Stripe with the checkout friction taken out. We instrument the funnel first, then fix what the data actually points at.',
-      benefits: [
-        'Checkout flows tested against real session recordings',
-        'Product data synced across every sales channel',
-        'Subscription, tax and multi-currency handled correctly',
-      ],
-      deliverables: ['Storefront', 'Checkout', 'Funnel analytics', 'A/B framework'],
     },
     'ui-ux-design': {
       title: 'UI/UX Design',
@@ -244,18 +229,6 @@ const copy: Record<Locale, Record<ServiceSlug, ServiceCopy>> = {
       ],
       deliverables: ['Designsystem', 'App-Builds', 'Store-Einträge', 'Release-Pipeline'],
     },
-    'e-commerce-solutions': {
-      title: 'E-Commerce-Lösungen',
-      summary: 'Shops, die auf Konversionsrate optimiert sind, nicht nur auf Ladezeit.',
-      description:
-        'Headless Commerce auf Shopify oder Stripe, ohne Reibung im Checkout. Wir messen zuerst den Funnel und beheben dann das, worauf die Daten tatsächlich zeigen.',
-      benefits: [
-        'Checkout-Strecken, geprüft an echten Sitzungsaufzeichnungen',
-        'Produktdaten über alle Verkaufskanäle synchronisiert',
-        'Abonnements, Steuern und Mehrwährungsfähigkeit korrekt umgesetzt',
-      ],
-      deliverables: ['Storefront', 'Checkout', 'Funnel-Analytics', 'A/B-Framework'],
-    },
     'ui-ux-design': {
       title: 'UI/UX-Design',
       summary: 'Interfacedesign, das den Kontakt mit echten Nutzern übersteht.',
@@ -366,18 +339,6 @@ const copy: Record<Locale, Record<ServiceSlug, ServiceCopy>> = {
         'Mises à jour à distance sans cycle de validation en magasin',
       ],
       deliverables: ['Design system', 'Builds applicatifs', 'Fiches magasin', 'Pipeline de publication'],
-    },
-    'e-commerce-solutions': {
-      title: 'Solutions e-commerce',
-      summary: 'Des boutiques réglées sur le taux de conversion, pas seulement sur la vitesse.',
-      description:
-        'Commerce headless sur Shopify ou Stripe, avec les frictions du tunnel d’achat retirées. Nous instrumentons d’abord l’entonnoir, puis nous corrigeons ce que les données désignent réellement.',
-      benefits: [
-        'Des tunnels de commande testés sur des enregistrements de sessions réelles',
-        'Des données produit synchronisées sur tous les canaux de vente',
-        'Abonnements, TVA et multidevise traités correctement',
-      ],
-      deliverables: ['Boutique', 'Tunnel de commande', 'Analytics d’entonnoir', 'Cadre de tests A/B'],
     },
     'ui-ux-design': {
       title: 'Design UI/UX',

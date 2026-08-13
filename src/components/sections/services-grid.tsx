@@ -7,6 +7,7 @@ import type { Locale } from '@/lib/i18n/config'
 import { Reveal } from '@/components/ui/reveal'
 import { SectionHeading } from '@/components/ui/section-heading'
 import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 
 /**
  * Services grid.
@@ -38,9 +39,24 @@ export function ServicesGrid({
           )}
         </div>
 
+        {/*
+          The grid draws its hairlines with `gap-px` over a `bg-border`
+          container, which means an unfilled cell in the last row shows up as a
+          block of border colour rather than nothing. With an odd number of
+          cards the two-column breakpoint always leaves one, so the final card
+          spans both columns there. At `lg` the count divides evenly by three,
+          so it returns to a single column.
+        */}
         <div className="mt-14 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
           {list.map((service, i) => (
-            <Reveal key={service.slug} delay={i * 0.05} className="bg-background">
+            <Reveal
+              key={service.slug}
+              delay={i * 0.05}
+              className={cn(
+                'bg-background',
+                i === list.length - 1 && list.length % 2 === 1 && 'sm:col-span-2 lg:col-span-1'
+              )}
+            >
               <article
                 id={service.slug}
                 className="group relative flex h-full scroll-mt-28 flex-col p-7 transition-colors duration-500 hover:bg-muted/40"
