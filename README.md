@@ -118,7 +118,7 @@ properly means either moving `<html>` into a root `app/layout.tsx` — which cos
 
 | Variable | Required | Purpose |
 | --- | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | recommended | Canonicals, sitemap, OG URLs |
+| `NEXT_PUBLIC_SITE_URL` | recommended | Canonicals, sitemap, OG URLs. Absolute origin, e.g. `https://arclight.studio`. A missing scheme is assumed to be `https`, a trailing slash is dropped, and blank counts as unset — leave it out entirely and it falls back to the production domain |
 | `NEXT_PUBLIC_CALENDLY_URL` | optional | Inline scheduling widget |
 | `NEXT_PUBLIC_GA_ID` | optional | GA4, loaded only after consent |
 | `RESEND_API_KEY` | optional | Contact form delivery |

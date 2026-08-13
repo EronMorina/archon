@@ -6,10 +6,43 @@
  * (`src/lib/i18n/dictionaries`), and hrefs are prefixed per locale at render
  * time with `localePath()`.
  */
+const DEFAULT_SITE_URL = 'https://arclight.studio'
+
+/**
+ * Resolve NEXT_PUBLIC_SITE_URL into something `new URL()` will accept.
+ *
+ * `process.env.X ?? fallback` is not enough: `??` only catches null and
+ * undefined, so a variable that exists but is blank — which is what a host
+ * gives you when the field is added and left empty — passes straight through
+ * and throws "TypeError: Invalid URL" during prerendering, with no indication
+ * of which value was at fault.
+ *
+ * So: blank counts as unset, a missing scheme is assumed to be https, and a
+ * trailing slash is dropped (every call site does `${site.url}${path}`, which
+ * would otherwise produce `//services`). Anything still unparseable is a
+ * genuine misconfiguration and fails loudly, naming the value.
+ */
+function resolveSiteUrl(): string {
+  const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim()
+  if (!raw) return DEFAULT_SITE_URL
+
+  const withScheme = /^https?:\/\//i.test(raw) ? raw : `https://${raw}`
+
+  try {
+    const url = new URL(withScheme)
+    return url.origin + url.pathname.replace(/\/$/, '')
+  } catch {
+    throw new Error(
+      `NEXT_PUBLIC_SITE_URL is not a valid URL: ${JSON.stringify(raw)}. ` +
+        `Use an absolute origin such as ${DEFAULT_SITE_URL}, or leave it unset to fall back to it.`
+    )
+  }
+}
+
 export const site = {
   name: 'Arclight',
   legalName: 'Arclight Studio Ltd.',
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://arclight.studio',
+  url: resolveSiteUrl(),
   email: 'hello@arclight.studio',
   phone: '+1 (415) 555-0132',
   address: { street: '2 Pier Road, Suite 400', city: 'San Francisco', region: 'CA', postal: '94111', country: 'US' },
