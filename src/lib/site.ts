@@ -61,7 +61,6 @@ export const site = {
     { label: 'GitHub', href: `https://github.com/${GITHUB_USER}` },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/company/archon-studio' },
     { label: 'X', href: 'https://x.com/archonstudio' },
-    { label: 'Dribbble', href: 'https://dribbble.com/archon-studio' },
   ],
 } as const
 
