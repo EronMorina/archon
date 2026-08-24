@@ -22,6 +22,16 @@
 const SHOT_WIDTH = 1200
 const SHOT_HEIGHT = 900
 
+/**
+ * The browser window thum.io lays the page out in before it photographs it.
+ *
+ * This is not the same as the output size and it is not optional: left unset,
+ * the renderer used a viewport narrow enough that a responsive page came back
+ * a blank white frame. 1440 is an ordinary desktop width, so a site is
+ * photographed in the layout it was designed for rather than a collapsed one.
+ */
+const SHOT_VIEWPORT = 1440
+
 export type Preview = {
   src: string
   /**
@@ -56,7 +66,7 @@ export function previewFor(repo: { fullName: string; homepage: string | null }):
       // Options precede the target URL in a thum.io path. `noanimate` settles
       // CSS animation first, so a page that fades its hero in is captured
       // finished rather than half-transparent.
-      src: `https://image.thum.io/get/width/${SHOT_WIDTH}/crop/${SHOT_HEIGHT}/noanimate/${repo.homepage}`,
+      src: `https://image.thum.io/get/width/${SHOT_WIDTH}/crop/${SHOT_HEIGHT}/noanimate/viewportWidth/${SHOT_VIEWPORT}/${repo.homepage}`,
       kind: 'screenshot',
     }
   }
