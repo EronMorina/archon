@@ -112,12 +112,6 @@ export function Hero({ locale }: { locale: Locale }) {
             </div>
             <div className="flex items-baseline gap-2">
               <dd className="font-display text-base font-semibold tracking-tight text-foreground">
-                <Counter to={9} locale={locale} />
-              </dd>
-              <dt>{t.stats.years}</dt>
-            </div>
-            <div className="flex items-baseline gap-2">
-              <dd className="font-display text-base font-semibold tracking-tight text-foreground">
                 <Counter to={96} suffix="%" locale={locale} />
               </dd>
               <dt>{t.stats.returning}</dt>

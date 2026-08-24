@@ -54,7 +54,6 @@ export const site = {
   phone: '+1 (415) 555-0132',
   address: { street: '', city: 'Salzburg', region: 'Austria', postal: '5020', country: 'AT' },
   calendly: process.env.NEXT_PUBLIC_CALENDLY_URL ?? 'https://calendly.com/archon-studio/intro-call',
-  founded: '2017',
   /** Source of the portfolio: `github.user`'s public repositories. */
   github: { user: GITHUB_USER, url: `https://github.com/${GITHUB_USER}` },
   socials: [

@@ -112,7 +112,6 @@ export const en = {
     secondaryCta: 'View portfolio',
     stats: {
       projects: 'Projects shipped',
-      years: 'Years building',
       returning: 'Clients who return',
     },
     cards: {
@@ -278,11 +277,10 @@ export const en = {
     about: {
       eyebrow: 'About',
       title: 'Fourteen people, no salespeople.',
-      lead: (founded: string) =>
-        `Founded in ${founded}. We work in small senior teams, publish the numbers our clients agree to share, and measure ourselves on whether your engineers can extend what we built six months later.`,
+      lead: 'We work in small senior teams, publish the numbers our clients agree to share, and measure ourselves on whether your engineers can extend what we built six months later.',
       metaTitle: 'About',
       metaDescription:
-        'ARCHON is a 14-person software studio founded in 2017. We work in small senior teams, publish our numbers, and hand over code your own engineers can extend.',
+        'ARCHON is a software studio working in small senior teams. We publish our numbers and hand over code your own engineers can extend.',
       principlesEyebrow: 'How we operate',
       principlesTitle: 'Four commitments we have turned down work over.',
       principlesLead:
@@ -308,16 +306,6 @@ export const en = {
           detail:
             'Two to four people per project, all of whom write code or design. No account layer between you and the person doing the work.',
         },
-      },
-      numbersEyebrow: 'By the numbers',
-      numbersTitle: 'Nine years, and the receipts.',
-      numbersLead:
-        'We report utilisation and delivery accuracy to clients on retainer every month. These are the annual figures from the same data.',
-      numbers: {
-        projects: 'Projects shipped since 2017',
-        people: 'People, all of whom build',
-        sprints: 'Sprints delivered on scope',
-        timezones: 'Time zones covered daily',
       },
     },
     contact: {

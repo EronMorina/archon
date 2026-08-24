@@ -110,7 +110,6 @@ export const fr: Dictionary = {
     secondaryCta: 'Voir les réalisations',
     stats: {
       projects: 'Projets livrés',
-      years: 'Années d’expérience',
       returning: 'Clients qui reviennent',
     },
     cards: {
@@ -272,11 +271,10 @@ export const fr: Dictionary = {
     about: {
       eyebrow: 'À propos',
       title: 'Quatorze personnes, aucun commercial.',
-      lead: (founded: string) =>
-        `Fondé en ${founded}. Nous travaillons en petites équipes expérimentées, publions les chiffres que nos clients acceptent de partager, et nous évaluons à une seule aune : vos développeurs peuvent-ils faire évoluer notre travail six mois plus tard ?`,
+      lead: 'Nous travaillons en petites équipes expérimentées, publions les chiffres que nos clients acceptent de partager, et nous évaluons à une seule aune : vos développeurs peuvent-ils faire évoluer notre travail six mois plus tard ?',
       metaTitle: 'À propos',
       metaDescription:
-        'ARCHON est un studio logiciel de 14 personnes fondé en 2017. Nous travaillons en petites équipes expérimentées, publions nos chiffres et livrons du code que vos propres développeurs peuvent faire évoluer.',
+        'ARCHON est un studio logiciel organisé en petites équipes expérimentées. Nous publions nos chiffres et livrons du code que vos propres développeurs peuvent faire évoluer.',
       principlesEyebrow: 'Notre façon de travailler',
       principlesTitle: 'Quatre engagements qui nous ont fait refuser des projets.',
       principlesLead:
@@ -302,16 +300,6 @@ export const fr: Dictionary = {
           detail:
             'De deux à quatre personnes par projet, qui toutes codent ou conçoivent. Aucune couche de gestion de compte entre vous et ceux qui font le travail.',
         },
-      },
-      numbersEyebrow: 'En chiffres',
-      numbersTitle: 'Neuf ans, et les preuves.',
-      numbersLead:
-        'Nous communiquons chaque mois le taux d’occupation et la précision de livraison à nos clients sous contrat. Voici les chiffres annuels issus des mêmes données.',
-      numbers: {
-        projects: 'Projets livrés depuis 2017',
-        people: 'Personnes, qui toutes construisent',
-        sprints: 'Sprints livrés dans le périmètre',
-        timezones: 'Fuseaux horaires couverts chaque jour',
       },
     },
     contact: {

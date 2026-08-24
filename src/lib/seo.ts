@@ -70,7 +70,6 @@ export function organisationSchema(locale: Locale) {
     inLanguage: localeMeta[locale].tag,
     email: site.email,
     telephone: site.phone,
-    foundingDate: site.founded,
     address: {
       '@type': 'PostalAddress',
       // No public street address — remote-first, so the schema carries city-level location only.

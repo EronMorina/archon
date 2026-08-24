@@ -109,7 +109,6 @@ export const de: Dictionary = {
     secondaryCta: 'Portfolio ansehen',
     stats: {
       projects: 'Projekte ausgeliefert',
-      years: 'Jahre Erfahrung',
       returning: 'Kunden, die wiederkommen',
     },
     cards: {
@@ -271,11 +270,10 @@ export const de: Dictionary = {
     about: {
       eyebrow: 'Über uns',
       title: 'Vierzehn Menschen, kein Vertrieb.',
-      lead: (founded: string) =>
-        `Gegründet ${founded}. Wir arbeiten in kleinen, erfahrenen Teams, veröffentlichen die Zahlen, die unsere Kunden freigeben, und messen uns daran, ob Ihre Entwickler ein halbes Jahr später weiterbauen können, was wir gebaut haben.`,
+      lead: 'Wir arbeiten in kleinen, erfahrenen Teams, veröffentlichen die Zahlen, die unsere Kunden freigeben, und messen uns daran, ob Ihre Entwickler ein halbes Jahr später weiterbauen können, was wir gebaut haben.',
       metaTitle: 'Über uns',
       metaDescription:
-        'ARCHON ist ein Software-Studio mit 14 Mitarbeitenden, gegründet 2017. Wir arbeiten in kleinen, erfahrenen Teams, veröffentlichen unsere Zahlen und übergeben Code, den Ihre eigenen Entwickler erweitern können.',
+        'ARCHON ist ein Software-Studio mit kleinen, erfahrenen Teams. Wir veröffentlichen unsere Zahlen und übergeben Code, den Ihre eigenen Entwickler erweitern können.',
       principlesEyebrow: 'Wie wir arbeiten',
       principlesTitle: 'Vier Zusagen, für die wir Aufträge abgelehnt haben.',
       principlesLead:
@@ -301,16 +299,6 @@ export const de: Dictionary = {
           detail:
             'Zwei bis vier Personen pro Projekt, die alle selbst programmieren oder gestalten. Keine Betreuungsebene zwischen Ihnen und den Menschen, die die Arbeit machen.',
         },
-      },
-      numbersEyebrow: 'In Zahlen',
-      numbersTitle: 'Neun Jahre – und die Belege dazu.',
-      numbersLead:
-        'Kunden mit Wartungsvertrag berichten wir monatlich Auslastung und Liefertreue. Das hier sind die Jahreswerte aus denselben Daten.',
-      numbers: {
-        projects: 'Projekte seit 2017 ausgeliefert',
-        people: 'Menschen, die alle selbst bauen',
-        sprints: 'Sprints im vereinbarten Umfang geliefert',
-        timezones: 'Zeitzonen täglich abgedeckt',
       },
     },
     contact: {
