@@ -73,7 +73,8 @@ export function organisationSchema(locale: Locale) {
     foundingDate: site.founded,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: site.address.street,
+      // No public street address — remote-first, so the schema carries city-level location only.
+      ...(site.address.street ? { streetAddress: site.address.street } : {}),
       addressLocality: site.address.city,
       addressRegion: site.address.region,
       postalCode: site.address.postal,
