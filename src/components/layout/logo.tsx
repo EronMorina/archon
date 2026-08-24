@@ -5,7 +5,7 @@ import { localePath } from '@/lib/i18n/paths'
 import type { Locale } from '@/lib/i18n/config'
 
 /**
- * ARCHION wordmark.
+ * ARCHON wordmark.
  *
  * The glyph is a chevron — an open apex drawn as two strokes — with a small
  * solid triangle nested at its base, which reads as the counter of an A. Both

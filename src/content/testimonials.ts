@@ -69,7 +69,7 @@ const copy: Record<Locale, Record<TestimonialId, TestimonialCopy>> = {
     },
     lumen: {
       quote:
-        'ARCHION refused to launch until the evaluation numbers satisfied our clinical governance board. No vendor had ever pushed back on our timeline for the right reason before.',
+        'ARCHON refused to launch until the evaluation numbers satisfied our clinical governance board. No vendor had ever pushed back on our timeline for the right reason before.',
       role: 'Clinical Director',
     },
     atlas: {
@@ -102,7 +102,7 @@ const copy: Record<Locale, Record<TestimonialId, TestimonialCopy>> = {
     },
     lumen: {
       quote:
-        'ARCHION weigerte sich zu starten, bis die Evaluationszahlen unser klinisches Governance-Gremium zufriedenstellten. Kein Dienstleister hatte je zuvor aus dem richtigen Grund gegen unseren Zeitplan argumentiert.',
+        'ARCHON weigerte sich zu starten, bis die Evaluationszahlen unser klinisches Governance-Gremium zufriedenstellten. Kein Dienstleister hatte je zuvor aus dem richtigen Grund gegen unseren Zeitplan argumentiert.',
       role: 'Ärztliche Direktorin',
     },
     atlas: {
@@ -135,7 +135,7 @@ const copy: Record<Locale, Record<TestimonialId, TestimonialCopy>> = {
     },
     lumen: {
       quote:
-        'ARCHION a refusé de lancer tant que les chiffres d’évaluation ne satisfaisaient pas notre comité de gouvernance clinique. Aucun prestataire n’avait jamais contesté notre calendrier pour la bonne raison.',
+        'ARCHON a refusé de lancer tant que les chiffres d’évaluation ne satisfaisaient pas notre comité de gouvernance clinique. Aucun prestataire n’avait jamais contesté notre calendrier pour la bonne raison.',
       role: 'Directrice médicale',
     },
     atlas: {

@@ -7,8 +7,8 @@ import { Button } from '@/components/ui/button'
 import { localePath } from '@/lib/i18n/paths'
 import { useDictionary, useLocale } from './locale-provider'
 
-export const CONSENT_KEY = 'archion-consent'
-const CONSENT_EVENT = 'archion-consent-change'
+export const CONSENT_KEY = 'archon-consent'
+const CONSENT_EVENT = 'archon-consent-change'
 
 export type ConsentValue = 'granted' | 'denied'
 

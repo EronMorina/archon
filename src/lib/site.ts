@@ -47,8 +47,8 @@ function resolveSiteUrl(): string {
 
 export const site = {
   /** Set in caps to match the logotype; used verbatim in the wordmark and prose. */
-  name: 'ARCHION',
-  legalName: 'Archion Studio Ltd.',
+  name: 'ARCHON',
+  legalName: 'Archon Studio Ltd.',
   url: resolveSiteUrl(),
   email: 'archonisolutions@gmail.com',
   phone: '+1 (415) 555-0132',
