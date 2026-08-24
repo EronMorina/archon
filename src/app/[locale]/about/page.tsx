@@ -1,10 +1,8 @@
-import Link from 'next/link'
 import { Compass, HeartHandshake, Ruler, Scale } from 'lucide-react'
 import { buildMetadata } from '@/lib/seo'
 import { site } from '@/lib/site'
 import { getDictionary } from '@/lib/i18n'
 import { toLocale } from '@/lib/i18n/config'
-import { localePath } from '@/lib/i18n/paths'
 import { PageHeader } from '@/components/layout/page-header'
 import { SectionHeading } from '@/components/ui/section-heading'
 import { Reveal } from '@/components/ui/reveal'
@@ -36,8 +34,6 @@ const team = [
   { key: 'daniel', name: 'Daniel Achebe', initials: 'DA', gradient: 'from-apex-mid to-apex-strong' },
   { key: 'hana', name: 'Hana Lindgren', initials: 'HL', gradient: 'from-apex-soft to-apex-mid' },
 ] as const
-
-const milestoneYears = ['2017', '2019', '2021', '2023', '2025', '2026'] as const
 
 const numbers = [
   { key: 'projects', value: 112, suffix: '+' },
@@ -128,30 +124,6 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
               </Reveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Milestones */}
-      <section className="section border-t border-border">
-        <div className="container">
-          <SectionHeading eyebrow={t.historyEyebrow} title={t.historyTitle} />
-          <ol className="mt-12 max-w-3xl">
-            {milestoneYears.map((year, i) => (
-              <Reveal key={year} delay={i * 0.05}>
-                <li className="flex gap-6 border-b border-border py-6 last:border-0 sm:gap-10">
-                  <span className="w-14 shrink-0 font-mono text-sm text-primary">{year}</span>
-                  <p className="text-[0.95rem] leading-relaxed text-muted-foreground">{t.milestones[year]}</p>
-                </li>
-              </Reveal>
-            ))}
-          </ol>
-          <p className="mt-10 text-sm text-muted-foreground">
-            {t.curiousBefore}
-            <Link href={localePath(locale, '/portfolio')} className="text-foreground underline underline-offset-4">
-              {t.curiousLink}
-            </Link>
-            {t.curiousAfter}
-          </p>
         </div>
       </section>
 
