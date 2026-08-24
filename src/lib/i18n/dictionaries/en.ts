@@ -221,6 +221,10 @@ export const en = {
   repos: {
     viewRepo: 'View repository',
     viewLive: 'Live site',
+    viewCode: 'Code',
+    liveBadge: 'Live',
+    shotAlt: (name: string) => `Screenshot of the site deployed from ${name}`,
+    cardAlt: (name: string) => `GitHub repository card for ${name}`,
     repoAria: (name: string) => `${name} on GitHub (opens in a new tab)`,
     liveAria: (name: string) => `Live site for ${name} (opens in a new tab)`,
     stars: 'Stars',

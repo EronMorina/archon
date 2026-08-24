@@ -4,10 +4,16 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
   images: {
-    // Remote patterns keep next/image optimisation on for CMS-hosted art.
+    /**
+     * Portfolio card artwork, both remote: thum.io renders a screenshot of a
+     * repository's deployed homepage, and GitHub serves the repo card shown
+     * when a repository has no homepage to photograph. Routing them through
+     * next/image is what caches them at the edge, which is what keeps the
+     * keyless thum.io tier viable under real traffic.
+     */
     remotePatterns: [
-      { protocol: 'https', hostname: 'images.unsplash.com' },
-      { protocol: 'https', hostname: 'cdn.sanity.io' },
+      { protocol: 'https', hostname: 'image.thum.io' },
+      { protocol: 'https', hostname: 'opengraph.githubassets.com' },
     ],
     formats: ['image/avif', 'image/webp'],
   },

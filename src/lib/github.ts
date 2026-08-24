@@ -24,7 +24,7 @@ export type Repo = {
   description: string | null
   /** Repository page on GitHub. */
   url: string
-  /** The repo's "Website" field, when it is set to something deployed. */
+  /** The repo's "Website" field — null unless it is set and answering today. */
   homepage: string | null
   /** GitHub's primary-language guess. Null on repos with no detected code. */
   language: string | null
@@ -44,6 +44,44 @@ const hidden: string[] = []
 
 /** One hour: fresh enough for a portfolio, far below any rate limit. */
 const REVALIDATE_SECONDS = 60 * 60
+
+/** How long a homepage gets to answer before it counts as not deployed. */
+const LIVE_CHECK_TIMEOUT_MS = 6000
+
+/**
+ * Whether a repo's "Website" field actually serves a page today.
+ *
+ * The field is metadata an owner typed once, so it long outlives the thing it
+ * points at — a deleted Vercel project keeps answering 404 at the same URL.
+ * That matters more here than it would in a plain link, because the portfolio
+ * photographs this URL: an unchecked dead homepage puts a screenshot of a
+ * 404 page on the card, which is worse than showing no screenshot at all.
+ *
+ * A failure of any kind — timeout, DNS, 4xx, 5xx — is read as "not deployed",
+ * and the card falls back to GitHub's repo image and drops its live link. The
+ * check rides the same hourly cache as the repository list, so a repo that
+ * gets deployed starts showing its screenshot within the hour, with nothing to
+ * edit on GitHub and nothing to redeploy here.
+ */
+async function isDeployed(url: string): Promise<boolean> {
+  const request = (method: 'HEAD' | 'GET') =>
+    fetch(url, {
+      method,
+      redirect: 'follow',
+      signal: AbortSignal.timeout(LIVE_CHECK_TIMEOUT_MS),
+      headers: { 'User-Agent': `${site.name.toLowerCase()}-website` },
+      next: { revalidate: REVALIDATE_SECONDS },
+    })
+
+  try {
+    const head = await request('HEAD')
+    // Some static hosts answer HEAD with 405/501 but serve GET perfectly well.
+    if (head.status === 405 || head.status === 501) return (await request('GET')).ok
+    return head.ok
+  } catch {
+    return false
+  }
+}
 
 /** Only the fields we read, out of the ~90 the API returns per repo. */
 type GitHubRepo = {
@@ -103,7 +141,7 @@ export async function getRepos(): Promise<Repo[]> {
 
   if (!Array.isArray(payload)) return []
 
-  return (payload as GitHubRepo[])
+  const repos = (payload as GitHubRepo[])
     .filter((repo) => !repo.fork && !repo.archived && !repo.private && !hidden.includes(repo.name))
     .map((repo) => ({
       id: repo.id,
@@ -119,6 +157,14 @@ export async function getRepos(): Promise<Repo[]> {
       forks: repo.forks_count,
       updatedAt: repo.pushed_at,
     }))
+
+  // Checked in parallel: the whole list waits on the slowest homepage, and
+  // most repos have none to check at all.
+  const deployed = await Promise.all(
+    repos.map((repo) => (repo.homepage ? isDeployed(repo.homepage) : Promise.resolve(false)))
+  )
+
+  return repos.map((repo, i) => (deployed[i] ? repo : { ...repo, homepage: null }))
 }
 
 /**

@@ -215,6 +215,10 @@ export const fr: Dictionary = {
   repos: {
     viewRepo: 'Voir le dépôt',
     viewLive: 'Site en ligne',
+    viewCode: 'Code',
+    liveBadge: 'En ligne',
+    shotAlt: (name: string) => `Capture du site déployé depuis ${name}`,
+    cardAlt: (name: string) => `Carte du dépôt GitHub pour ${name}`,
     repoAria: (name: string) => `${name} sur GitHub (ouvre un nouvel onglet)`,
     liveAria: (name: string) => `Site en ligne de ${name} (ouvre un nouvel onglet)`,
     stars: 'Étoiles',

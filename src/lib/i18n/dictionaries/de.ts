@@ -214,6 +214,10 @@ export const de: Dictionary = {
   repos: {
     viewRepo: 'Repository ansehen',
     viewLive: 'Live-Website',
+    viewCode: 'Code',
+    liveBadge: 'Live',
+    shotAlt: (name: string) => `Screenshot der aus ${name} veröffentlichten Website`,
+    cardAlt: (name: string) => `GitHub-Repository-Karte für ${name}`,
     repoAria: (name: string) => `${name} auf GitHub (öffnet in neuem Tab)`,
     liveAria: (name: string) => `Live-Website zu ${name} (öffnet in neuem Tab)`,
     stars: 'Sterne',
