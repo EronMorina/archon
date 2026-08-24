@@ -10,7 +10,6 @@ import { Counter } from '@/components/ui/counter'
 import { Testimonials } from '@/components/sections/testimonials'
 import { ProcessTimeline } from '@/components/sections/process-timeline'
 import { Cta } from '@/components/sections/cta'
-import { cn } from '@/lib/utils'
 
 export function generateMetadata({ params }: { params: { locale: string } }) {
   const locale = toLocale(params.locale)
@@ -24,15 +23,6 @@ const principleIcons = [
   { key: 'honesty', icon: Scale },
   { key: 'handover', icon: Ruler },
   { key: 'teams', icon: HeartHandshake },
-] as const
-
-const team = [
-  { key: 'marcus', name: 'Marcus Ainsley', initials: 'MA', gradient: 'from-apex-strong to-apex-mid' },
-  { key: 'yuki', name: 'Yuki Tanaka', initials: 'YT', gradient: 'from-apex-mid to-apex-soft' },
-  { key: 'ines', name: 'Ines Duarte', initials: 'ID', gradient: 'from-apex-soft to-apex-strong' },
-  { key: 'sofia', name: 'Sofia Ferreira', initials: 'SF', gradient: 'from-apex-strong to-apex-soft' },
-  { key: 'daniel', name: 'Daniel Achebe', initials: 'DA', gradient: 'from-apex-mid to-apex-strong' },
-  { key: 'hana', name: 'Hana Lindgren', initials: 'HL', gradient: 'from-apex-soft to-apex-mid' },
 ] as const
 
 const numbers = [
@@ -93,37 +83,6 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
               </div>
             ))}
           </dl>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="section">
-        <div className="container">
-          <SectionHeading eyebrow={t.teamEyebrow} title={t.teamTitle} lead={t.teamLead} />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {team.map((person, i) => (
-              <Reveal key={person.key} delay={i * 0.05}>
-                <div className="apex-ring flex h-full items-start gap-4 rounded-xl border border-border bg-card p-6">
-                  <span
-                    aria-hidden
-                    className={cn(
-                      'flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br font-mono text-sm text-background',
-                      person.gradient
-                    )}
-                  >
-                    {person.initials}
-                  </span>
-                  <div className="min-w-0">
-                    <h3 className="text-base">{person.name}</h3>
-                    <p className="mt-0.5 text-sm text-muted-foreground">{t.team[person.key].role}</p>
-                    <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
-                      {t.team[person.key].focus}
-                    </p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 

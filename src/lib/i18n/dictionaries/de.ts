@@ -10,7 +10,7 @@ export const de: Dictionary = {
   site: {
     tagline: 'Wir bauen Software, die Unternehmen voranbringt.',
     description:
-      'ARCHION ist ein Software-Studio, das Websites, individuelle Webanwendungen, KI-gestützte Lösungen und Geschäftsprozess-Automatisierung für Start-ups und wachsende Unternehmen konzipiert und entwickelt.',
+      'ARCHON ist ein Software-Studio, das Websites, individuelle Webanwendungen, KI-gestützte Lösungen und Geschäftsprozess-Automatisierung für Start-ups und wachsende Unternehmen konzipiert und entwickelt.',
     kicker: 'Software-Studio',
     remoteFirst: 'Remote-first',
   },
@@ -258,7 +258,7 @@ export const de: Dictionary = {
       lead: 'Jedes Repository hier wird live von GitHub geladen, zuletzt aktualisierte zuerst. Filtern Sie nach Sprache oder suchen Sie nach Name und Thema.',
       metaTitle: 'Portfolio',
       metaDescription:
-        'Öffentliche Repositories von ARCHION auf GitHub — jeweils mit Sprache, Themen, Quellcode und, wo vorhanden, der laufenden Website.',
+        'Öffentliche Repositories von ARCHON auf GitHub — jeweils mit Sprache, Themen, Quellcode und, wo vorhanden, der laufenden Website.',
     },
     blog: {
       eyebrow: 'Texte',
@@ -266,7 +266,7 @@ export const de: Dictionary = {
       lead: 'Was wir in echten Projekten gelernt haben, samt der Entscheidungen, die wir heute anders treffen würden. Eine Ausgabe pro Monat, keine Kampagnenstrecken.',
       metaTitle: 'Blog',
       metaDescription:
-        'Engineering-Notizen des ARCHION-Teams zu KI-Evaluation, Performance im Feld, Übergabequalität, Software für den Außendienst und ehrlicher Aufwandsschätzung.',
+        'Engineering-Notizen des ARCHON-Teams zu KI-Evaluation, Performance im Feld, Übergabequalität, Software für den Außendienst und ehrlicher Aufwandsschätzung.',
     },
     about: {
       eyebrow: 'Über uns',
@@ -275,7 +275,7 @@ export const de: Dictionary = {
         `Gegründet ${founded}. Wir arbeiten in kleinen, erfahrenen Teams, veröffentlichen die Zahlen, die unsere Kunden freigeben, und messen uns daran, ob Ihre Entwickler ein halbes Jahr später weiterbauen können, was wir gebaut haben.`,
       metaTitle: 'Über uns',
       metaDescription:
-        'ARCHION ist ein Software-Studio mit 14 Mitarbeitenden, gegründet 2017. Wir arbeiten in kleinen, erfahrenen Teams, veröffentlichen unsere Zahlen und übergeben Code, den Ihre eigenen Entwickler erweitern können.',
+        'ARCHON ist ein Software-Studio mit 14 Mitarbeitenden, gegründet 2017. Wir arbeiten in kleinen, erfahrenen Teams, veröffentlichen unsere Zahlen und übergeben Code, den Ihre eigenen Entwickler erweitern können.',
       principlesEyebrow: 'Wie wir arbeiten',
       principlesTitle: 'Vier Zusagen, für die wir Aufträge abgelehnt haben.',
       principlesLead:
@@ -312,18 +312,6 @@ export const de: Dictionary = {
         sprints: 'Sprints im vereinbarten Umfang geliefert',
         timezones: 'Zeitzonen täglich abgedeckt',
       },
-      teamEyebrow: 'Team',
-      teamTitle: 'Die Menschen, die an Ihrem Projekt arbeiten würden.',
-      teamLead:
-        'Jeder Name hier programmiert oder gestaltet Oberflächen. Die beiden Gründer arbeiten weiterhin in Projektteams mit.',
-      team: {
-        marcus: { role: 'Principal Engineer & Mitgründer', focus: 'Architektur, Performance' },
-        yuki: { role: 'Design Lead & Mitgründerin', focus: 'Produktdesign, Barrierefreiheit' },
-        ines: { role: 'ML Engineer', focus: 'Retrieval, Evaluation' },
-        sofia: { role: 'Delivery Lead', focus: 'Scoping, Automatisierung' },
-        daniel: { role: 'Senior Engineer', focus: 'Backend, Cloud-Infrastruktur' },
-        hana: { role: 'Senior Engineer', focus: 'Frontend, Designsysteme' },
-      },
     },
     contact: {
       eyebrow: 'Kontakt',
@@ -331,7 +319,7 @@ export const de: Dictionary = {
       lead: 'Schicken Sie uns die Details, oder buchen Sie direkt einen Termin. So oder so sprechen Sie zuerst mit einem technischen Lead — eine Qualifizierungsschleife gibt es bei uns nicht.',
       metaTitle: 'Kontakt',
       metaDescription:
-        'Starten Sie ein Projekt mit ARCHION. Schreiben Sie uns oder buchen Sie 30 Minuten direkt im Kalender eines technischen Leads — ohne vorgeschaltetes Qualifizierungsgespräch.',
+        'Starten Sie ein Projekt mit ARCHON. Schreiben Sie uns oder buchen Sie 30 Minuten direkt im Kalender eines technischen Leads — ohne vorgeschaltetes Qualifizierungsgespräch.',
       formHeading: 'Anfrageformular',
       details: {
         email: 'E-Mail',
@@ -381,7 +369,7 @@ export const de: Dictionary = {
     messagePlaceholder:
       'Wir koordinieren täglich 4.000 Frachtaufträge über Tabellen, und zwei Depots nehmen immer wieder denselben Auftrag an…',
     consent:
-      'ARCHION darf mir zu dieser Anfrage schreiben. Keine Verteiler, keine Weitergabe an Dritte.',
+      'ARCHON darf mir zu dieser Anfrage schreiben. Keine Verteiler, keine Weitergabe an Dritte.',
     submit: 'Nachricht senden',
     sending: 'Wird gesendet',
     sentTitle: 'Nachricht gesendet',

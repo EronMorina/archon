@@ -11,7 +11,7 @@ export const fr: Dictionary = {
   site: {
     tagline: 'Nous créons des logiciels qui font avancer les entreprises.',
     description:
-      'ARCHION est un studio logiciel qui conçoit et développe des sites web, des applications web sur mesure, des solutions basées sur l’IA et l’automatisation des processus pour les start-up et les entreprises en croissance.',
+      'ARCHON est un studio logiciel qui conçoit et développe des sites web, des applications web sur mesure, des solutions basées sur l’IA et l’automatisation des processus pour les start-up et les entreprises en croissance.',
     kicker: 'Studio logiciel',
     remoteFirst: 'Télétravail d’abord',
   },
@@ -259,7 +259,7 @@ export const fr: Dictionary = {
       lead: 'Chaque dépôt ci-dessous est chargé en direct depuis GitHub, du plus récemment mis à jour au plus ancien. Filtrez par langage ou cherchez par nom et par thème.',
       metaTitle: 'Réalisations',
       metaDescription:
-        'Dépôts publics d’ARCHION sur GitHub — chacun avec son langage, ses thèmes, son code source et, quand il existe, le site en ligne.',
+        'Dépôts publics d’ARCHON sur GitHub — chacun avec son langage, ses thèmes, son code source et, quand il existe, le site en ligne.',
     },
     blog: {
       eyebrow: 'Écrits',
@@ -267,7 +267,7 @@ export const fr: Dictionary = {
       lead: 'Ce que nous avons appris sur des missions réelles, y compris les décisions que nous prendrions autrement. Un numéro par mois, aucune séquence.',
       metaTitle: 'Blog',
       metaDescription:
-        'Notes d’ingénierie de l’équipe ARCHION sur l’évaluation de l’IA, la performance réelle, la qualité du transfert, la conception de logiciels de terrain et le chiffrage honnête.',
+        'Notes d’ingénierie de l’équipe ARCHON sur l’évaluation de l’IA, la performance réelle, la qualité du transfert, la conception de logiciels de terrain et le chiffrage honnête.',
     },
     about: {
       eyebrow: 'À propos',
@@ -276,7 +276,7 @@ export const fr: Dictionary = {
         `Fondé en ${founded}. Nous travaillons en petites équipes expérimentées, publions les chiffres que nos clients acceptent de partager, et nous évaluons à une seule aune : vos développeurs peuvent-ils faire évoluer notre travail six mois plus tard ?`,
       metaTitle: 'À propos',
       metaDescription:
-        'ARCHION est un studio logiciel de 14 personnes fondé en 2017. Nous travaillons en petites équipes expérimentées, publions nos chiffres et livrons du code que vos propres développeurs peuvent faire évoluer.',
+        'ARCHON est un studio logiciel de 14 personnes fondé en 2017. Nous travaillons en petites équipes expérimentées, publions nos chiffres et livrons du code que vos propres développeurs peuvent faire évoluer.',
       principlesEyebrow: 'Notre façon de travailler',
       principlesTitle: 'Quatre engagements qui nous ont fait refuser des projets.',
       principlesLead:
@@ -313,18 +313,6 @@ export const fr: Dictionary = {
         sprints: 'Sprints livrés dans le périmètre',
         timezones: 'Fuseaux horaires couverts chaque jour',
       },
-      teamEyebrow: 'Équipe',
-      teamTitle: 'Les personnes qui seraient sur votre projet.',
-      teamLead:
-        'Chaque nom ici écrit du code ou conçoit des interfaces. Les deux fondateurs sont toujours dans les équipes de livraison.',
-      team: {
-        marcus: { role: 'Ingénieur principal & cofondateur', focus: 'Architecture, performance' },
-        yuki: { role: 'Directrice du design & cofondatrice', focus: 'Design produit, accessibilité' },
-        ines: { role: 'Ingénieure ML', focus: 'Recherche d’information, évaluation' },
-        sofia: { role: 'Responsable de livraison', focus: 'Cadrage, automatisation' },
-        daniel: { role: 'Ingénieur senior', focus: 'Backend, infrastructure cloud' },
-        hana: { role: 'Ingénieure senior', focus: 'Front-end, design systems' },
-      },
     },
     contact: {
       eyebrow: 'Contact',
@@ -332,7 +320,7 @@ export const fr: Dictionary = {
       lead: 'Envoyez-nous les détails, ou réservez directement un créneau. Dans les deux cas, vous parlez d’abord à un responsable technique — nous n’avons pas de filtre commercial.',
       metaTitle: 'Contact',
       metaDescription:
-        'Démarrez un projet avec ARCHION. Écrivez-nous ou réservez 30 minutes directement dans l’agenda d’un responsable technique — sans appel de qualification préalable.',
+        'Démarrez un projet avec ARCHON. Écrivez-nous ou réservez 30 minutes directement dans l’agenda d’un responsable technique — sans appel de qualification préalable.',
       formHeading: 'Formulaire de demande',
       details: {
         email: 'E-mail',
@@ -382,7 +370,7 @@ export const fr: Dictionary = {
     messagePlaceholder:
       'Nous coordonnons 4 000 chargements par jour dans des tableurs, et deux dépôts acceptent régulièrement le même chargement…',
     consent:
-      'ARCHION peut m’écrire au sujet de cette demande. Aucune liste de diffusion, aucun partage avec des tiers.',
+      'ARCHON peut m’écrire au sujet de cette demande. Aucune liste de diffusion, aucun partage avec des tiers.',
     submit: 'Envoyer le message',
     sending: 'Envoi en cours',
     sentTitle: 'Message envoyé',
