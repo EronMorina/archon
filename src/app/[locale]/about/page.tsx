@@ -147,7 +147,7 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
           </ol>
           <p className="mt-10 text-sm text-muted-foreground">
             {t.curiousBefore}
-            <Link href={localePath(locale, '/case-studies')} className="text-foreground underline underline-offset-4">
+            <Link href={localePath(locale, '/portfolio')} className="text-foreground underline underline-offset-4">
               {t.curiousLink}
             </Link>
             {t.curiousAfter}

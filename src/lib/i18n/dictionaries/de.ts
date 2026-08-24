@@ -19,7 +19,6 @@ export const de: Dictionary = {
     skipToContent: 'Zum Inhalt springen',
     mainNavigation: 'Hauptnavigation',
     home: 'Startseite',
-    technologiesUsed: 'Eingesetzte Technologien',
     outputsOf: (phase: string) => `Ergebnisse der Phase ${phase}`,
   },
 
@@ -64,7 +63,6 @@ export const de: Dictionary = {
         heading: 'Unternehmen',
         links: {
           about: 'Über uns',
-          caseStudies: 'Fallstudien',
           portfolio: 'Portfolio',
           blog: 'Blog',
           contact: 'Kontakt',
@@ -131,18 +129,10 @@ export const de: Dictionary = {
   },
 
   portfolioSection: {
-    eyebrow: 'Ausgewählte Arbeiten',
-    title: 'Drei Projekte – und was sich dadurch verändert hat.',
-    lead: 'Wir veröffentlichen die Zahlen, die unsere Kunden freigegeben haben, auch die Projekte, die länger gedauert haben als geplant.',
-    allWork: 'Alle Arbeiten',
-    viewCaseStudy: 'Fallstudie ansehen',
-    readCaseStudy: 'Fallstudie lesen',
-    cardAria: (title: string, client: string) => `${title} — Fallstudie zu ${client} lesen`,
-    readAria: (client: string) => `Fallstudie zu ${client} lesen`,
-    viewCode: 'Code',
-    viewLive: 'Live-Website',
-    codeAria: (title: string) => `Quellcode zu ${title} (öffnet in neuem Tab)`,
-    liveAria: (title: string) => `Live-Website zu ${title} (öffnet in neuem Tab)`,
+    eyebrow: 'Von GitHub',
+    title: 'Woran wir arbeiten — direkt aus den Repositories.',
+    lead: 'Live von GitHub geladen — dieselben Repositories, die Sie klonen, lesen und selbst starten können.',
+    allWork: 'Alle Repositories',
   },
 
   stats: {
@@ -168,7 +158,7 @@ export const de: Dictionary = {
   testimonials: {
     eyebrow: 'Kunden',
     title: 'Was Kunden sagen, wenn das Projekt vorbei ist.',
-    lead: 'Jedes Zitat stammt von einem namentlich genannten Kunden aus einem Projekt, zu dem Sie die Fallstudie lesen können.',
+    lead: 'Jedes Zitat stammt von einem namentlich genannten Kunden aus einem Projekt, das wir von Anfang bis Ende umgesetzt haben.',
   },
 
   pricing: {
@@ -200,16 +190,6 @@ export const de: Dictionary = {
       'Wenn Ihnen das bekannt vorkommt, ist ein Gespräch von 30 Minuten meist der schnellste Weg herauszufinden, ob wir helfen können.',
   },
 
-  categories: {
-    all: 'Alle',
-    webApp: 'Webanwendung',
-    website: 'Website',
-    ai: 'KI',
-    automation: 'Automatisierung',
-    mobile: 'Mobile',
-    ecommerce: 'E-Commerce',
-  },
-
   postCategories: {
     all: 'Alle',
     engineering: 'Engineering',
@@ -220,23 +200,40 @@ export const de: Dictionary = {
   },
 
   filters: {
-    projectsGroupLabel: 'Projekte nach Typ filtern',
     articlesGroupLabel: 'Artikel nach Kategorie filtern',
-    searchProjectsLabel: 'Projekte durchsuchen',
-    searchProjectsPlaceholder: 'Arbeiten oder Technologie suchen',
     searchArticlesLabel: 'Artikel durchsuchen',
     searchArticlesPlaceholder: 'Artikel suchen',
     clearSearch: 'Suche zurücksetzen',
     clearFilters: 'Filter zurücksetzen',
-    projectCount: (n: number) => `${n} ${n === 1 ? 'Projekt' : 'Projekte'}`,
-    inCategory: (category: string) => ` in ${category}`,
     articleCount: (n: number) => `${n} ${n === 1 ? 'Artikel' : 'Artikel'}`,
-    noProjectsTitle: 'Dazu passt noch kein Projekt',
-    noProjectsBody:
-      'Wahrscheinlich haben wir es trotzdem schon gebaut — nicht alles ist veröffentlicht. Setzen Sie die Filter zurück oder fragen Sie uns direkt.',
     noArticlesTitle: 'Dazu ist noch nichts erschienen',
     noArticlesBody:
       'Versuchen Sie einen weiteren Begriff, oder sagen Sie uns, was Sie lesen wollten — dann schreiben wir es.',
+  },
+
+  repos: {
+    viewRepo: 'Repository ansehen',
+    viewLive: 'Live-Website',
+    repoAria: (name: string) => `${name} auf GitHub (öffnet in neuem Tab)`,
+    liveAria: (name: string) => `Live-Website zu ${name} (öffnet in neuem Tab)`,
+    stars: 'Sterne',
+    forks: 'Forks',
+    updated: 'Letzter Push',
+    topicsLabel: 'Themen des Repositories',
+    noDescription: 'Auf GitHub noch ohne Beschreibung.',
+    noLanguage: 'Sonstige',
+    allLanguages: 'Alle',
+    groupLabel: 'Repositories nach Sprache filtern',
+    searchLabel: 'Repositories durchsuchen',
+    searchPlaceholder: 'Name, Thema oder Sprache suchen',
+    count: (n: number) => `${n} ${n === 1 ? 'Repository' : 'Repositories'}`,
+    inLanguage: (language: string) => ` in ${language}`,
+    noMatchTitle: 'Dazu passt kein Repository',
+    noMatchBody: 'Versuchen Sie einen weiteren Begriff, oder setzen Sie die Filter zurück, um alles zu sehen.',
+    profileLink: (user: string) => `Alle Repositories auf github.com/${user}`,
+    unavailableTitle: 'GitHub antwortet gerade nicht',
+    unavailableBody:
+      'Die Repository-Liste konnte nicht geladen werden. Meist ist sie nach wenigen Minuten wieder da — bis dahin führt das Profil selbst am schnellsten hin.',
   },
 
   pages: {
@@ -253,19 +250,11 @@ export const de: Dictionary = {
     },
     portfolio: {
       eyebrow: 'Portfolio',
-      title: 'Arbeit, die man messen kann, nicht nur ansehen.',
-      lead: 'Jedes Projekt hier ist mit Zustimmung des Kunden veröffentlicht, inklusive der Zahlen. Filtern Sie nach Typ oder suchen Sie nach Technologie.',
+      title: 'Arbeit, die man Zeile für Zeile nachlesen kann.',
+      lead: 'Jedes Repository hier wird live von GitHub geladen, zuletzt aktualisierte zuerst. Filtern Sie nach Sprache oder suchen Sie nach Name und Thema.',
       metaTitle: 'Portfolio',
       metaDescription:
-        'Ausgewählte Arbeiten von ARCHON: Dispositionsplattformen für Speditionen, klinische KI-Triage, Investorenportale, Headless Commerce, mobile Außendienst-Apps und Onboarding-Automatisierung.',
-    },
-    caseStudies: {
-      eyebrow: 'Fallstudien',
-      title: 'Die ganze Geschichte, auch die unbequemen Stellen.',
-      lead: 'Problem, Lösung, Technologien, Ergebnisse. Gemeinsam mit dem Kunden geschrieben und mit dessen Freigabe veröffentlicht.',
-      metaTitle: 'Fallstudien',
-      metaDescription:
-        'Ausführliche Berichte zu ARCHON-Projekten: das Problem, die Lösung, die Technologien und die gemessenen Ergebnisse — einschließlich dessen, was länger gedauert hat als geplant.',
+        'Öffentliche Repositories von ARCHON auf GitHub — jeweils mit Sprache, Themen, Quellcode und, wo vorhanden, der laufenden Website.',
     },
     blog: {
       eyebrow: 'Texte',
@@ -367,23 +356,6 @@ export const de: Dictionary = {
       work: 'Arbeiten ansehen',
       metaTitle: 'Seite nicht gefunden',
     },
-  },
-
-  caseStudy: {
-    backToAll: 'Alle Fallstudien',
-    duration: 'Dauer',
-    team: 'Team',
-    industry: 'Branche',
-    delivered: 'Ausgeliefert',
-    problem: 'Das Problem',
-    solution: 'Die Lösung',
-    approach: 'Unser Vorgehen',
-    results: 'Ergebnisse',
-    technologies: 'Technologien',
-    startProject: 'Ein Projekt wie dieses starten',
-    nextCaseStudy: 'Nächste Fallstudie',
-    breadcrumbHome: 'Startseite',
-    breadcrumbCaseStudies: 'Fallstudien',
   },
 
   post: {

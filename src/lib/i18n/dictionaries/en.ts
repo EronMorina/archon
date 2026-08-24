@@ -22,7 +22,6 @@ export const en = {
     skipToContent: 'Skip to content',
     mainNavigation: 'Main',
     home: 'home',
-    technologiesUsed: 'Technologies used',
     outputsOf: (phase: string) => `${phase} outputs`,
   },
 
@@ -67,7 +66,6 @@ export const en = {
         heading: 'Company',
         links: {
           about: 'About',
-          caseStudies: 'Case studies',
           portfolio: 'Portfolio',
           blog: 'Blog',
           contact: 'Contact',
@@ -134,18 +132,10 @@ export const en = {
   },
 
   portfolioSection: {
-    eyebrow: 'Selected work',
-    title: 'Three projects, and what changed because of them.',
-    lead: 'We publish the numbers our clients agreed to share, including the ones that took longer than planned.',
-    allWork: 'All work',
-    viewCaseStudy: 'View case study',
-    readCaseStudy: 'Read case study',
-    cardAria: (title: string, client: string) => `${title} — read the ${client} case study`,
-    readAria: (client: string) => `Read the ${client} case study`,
-    viewCode: 'Code',
-    viewLive: 'Live site',
-    codeAria: (title: string) => `Source code for ${title} (opens in a new tab)`,
-    liveAria: (title: string) => `Live site for ${title} (opens in a new tab)`,
+    eyebrow: 'From GitHub',
+    title: 'What we are building, straight from the repositories.',
+    lead: 'Pulled live from GitHub — the same repositories you can clone, read and run yourself.',
+    allWork: 'All repositories',
   },
 
   stats: {
@@ -171,7 +161,7 @@ export const en = {
   testimonials: {
     eyebrow: 'Clients',
     title: 'What people say when the project is over.',
-    lead: 'Every quote below is from a named client on a project you can read the case study for.',
+    lead: 'Every quote below is from a named client on a project we delivered end to end.',
   },
 
   pricing: {
@@ -203,16 +193,6 @@ export const en = {
       'If any of the above sounds like your situation, a 30-minute call is usually the fastest way to find out whether we can help.',
   },
 
-  categories: {
-    all: 'All',
-    webApp: 'Web App',
-    website: 'Website',
-    ai: 'AI',
-    automation: 'Automation',
-    mobile: 'Mobile',
-    ecommerce: 'E-Commerce',
-  },
-
   postCategories: {
     all: 'All',
     engineering: 'Engineering',
@@ -223,22 +203,44 @@ export const en = {
   },
 
   filters: {
-    projectsGroupLabel: 'Filter projects by type',
     articlesGroupLabel: 'Filter articles by category',
-    searchProjectsLabel: 'Search projects',
-    searchProjectsPlaceholder: 'Search work or technology',
     searchArticlesLabel: 'Search articles',
     searchArticlesPlaceholder: 'Search articles',
     clearSearch: 'Clear search',
     clearFilters: 'Clear filters',
-    projectCount: (n: number) => `${n} ${n === 1 ? 'project' : 'projects'}`,
-    inCategory: (category: string) => ` in ${category}`,
     articleCount: (n: number) => `${n} ${n === 1 ? 'article' : 'articles'}`,
-    noProjectsTitle: 'No projects match that yet',
-    noProjectsBody:
-      'We have probably still done the work — not everything is published. Clear the filters, or ask us directly.',
     noArticlesTitle: 'Nothing published on that yet',
     noArticlesBody: 'Try a broader term, or tell us what you were hoping to read and we will write it.',
+  },
+
+  /**
+   * Chrome for the GitHub-backed portfolio. Repository names, languages and
+   * topics come from the API as they are written on GitHub and are never
+   * translated — only the labels around them are.
+   */
+  repos: {
+    viewRepo: 'View repository',
+    viewLive: 'Live site',
+    repoAria: (name: string) => `${name} on GitHub (opens in a new tab)`,
+    liveAria: (name: string) => `Live site for ${name} (opens in a new tab)`,
+    stars: 'Stars',
+    forks: 'Forks',
+    updated: 'Last push',
+    topicsLabel: 'Repository topics',
+    noDescription: 'No description on GitHub yet.',
+    noLanguage: 'Other',
+    allLanguages: 'All',
+    groupLabel: 'Filter repositories by language',
+    searchLabel: 'Search repositories',
+    searchPlaceholder: 'Search name, topic or language',
+    count: (n: number) => `${n} ${n === 1 ? 'repository' : 'repositories'}`,
+    inLanguage: (language: string) => ` in ${language}`,
+    noMatchTitle: 'No repositories match that',
+    noMatchBody: 'Try a broader term, or clear the filters to see everything on the account.',
+    profileLink: (user: string) => `See all repositories at github.com/${user}`,
+    unavailableTitle: 'GitHub is not answering right now',
+    unavailableBody:
+      'The repository list could not be loaded. It is usually back within a few minutes — until then, the profile itself is the fastest route.',
   },
 
   pages: {
@@ -255,19 +257,11 @@ export const en = {
     },
     portfolio: {
       eyebrow: 'Portfolio',
-      title: 'Work you can measure, not just look at.',
-      lead: "Every project below is published with its client's permission, including the numbers. Filter by type or search by technology.",
+      title: 'Work you can read line by line.',
+      lead: 'Every repository below is pulled live from GitHub, most recently pushed first. Filter by language, or search by name and topic.',
       metaTitle: 'Portfolio',
       metaDescription:
-        'Selected work from ARCHON: freight dispatch platforms, clinical AI triage, investor portals, headless commerce, field mobile apps and onboarding automation.',
-    },
-    caseStudies: {
-      eyebrow: 'Case studies',
-      title: 'The whole story, including the awkward parts.',
-      lead: 'Problem, solution, technologies, results. Written with the client and published with their sign-off.',
-      metaTitle: 'Case studies',
-      metaDescription:
-        'Full write-ups of ARCHON engagements: the problem, the solution, the technologies and the measured results — including what took longer than planned.',
+        'Public repositories from ARCHON on GitHub — each one with its language, topics, source code and, where there is one, the live build.',
     },
     blog: {
       eyebrow: 'Writing',
@@ -368,23 +362,6 @@ export const en = {
       work: 'Browse the work',
       metaTitle: 'Page not found',
     },
-  },
-
-  caseStudy: {
-    backToAll: 'All case studies',
-    duration: 'Duration',
-    team: 'Team',
-    industry: 'Industry',
-    delivered: 'Delivered',
-    problem: 'The problem',
-    solution: 'The solution',
-    approach: 'How we approached it',
-    results: 'Results',
-    technologies: 'Technologies',
-    startProject: 'Start a project like this',
-    nextCaseStudy: 'Next case study',
-    breadcrumbHome: 'Home',
-    breadcrumbCaseStudies: 'Case studies',
   },
 
   post: {

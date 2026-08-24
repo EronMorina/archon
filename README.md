@@ -54,8 +54,7 @@ src/
 │   │   ├── template.tsx        Route transition (remounts per navigation)
 │   │   ├── page.tsx            Home
 │   │   ├── services/           10 service lines with benefits + deliverables
-│   │   ├── portfolio/          Filterable, searchable project grid
-│   │   ├── case-studies/[slug]/ Problem · Solution · Approach · Results · Quote
+│   │   ├── portfolio/          Live GitHub repositories, filterable by language
 │   │   ├── blog/[slug]/        Article with related posts
 │   │   ├── about/  contact/    Team, principles, history · form + Calendly
 │   │   ├── privacy|terms|cookies|accessibility/
@@ -70,20 +69,38 @@ src/
 │   ├── layout/                 Navbar, Footer, Logo, ThemeToggle, LanguageSwitcher,
 │   │                           ScrollProgress, CookieConsent, Analytics,
 │   │                           PageHeader, Newsletter, LocaleProvider, MotionProvider
-│   ├── sections/               Hero, ServicesGrid, PortfolioPreview, ProjectCard,
+│   ├── sections/               Hero, ServicesGrid, PortfolioPreview, RepoCard,
 │   │                           TechMarquee, ProcessTimeline, Stats, Testimonials,
 │   │                           Pricing, Faq, Cta
-│   └── features/               ProjectFilter, BlogExplorer, ContactForm, CalendlyEmbed
-├── content/                    services · projects · posts · testimonials ·
+│   └── features/               RepoFilter, BlogExplorer, ContactForm, CalendlyEmbed
+├── content/                    services · posts · testimonials ·
 │                               pricing · faqs · process · tech · legal
 └── lib/
     ├── i18n/                   config · paths · dictionaries/{en,de,fr}
-    └── utils · site · seo · contact-schema
+    └── github · utils · site · seo · contact-schema
 ```
 
 `src/content/*` is the CMS seam. Each file exports typed, locale-keyed documents behind a
-`getX(locale)` accessor, so swapping the `copy` object for `await getProjects(locale)` from
+`getX(locale)` accessor, so swapping the `copy` object for `await getPosts(locale)` from
 Sanity, Contentful or Payload touches the content module only — no component changes.
+
+## Portfolio
+
+The portfolio is not written down anywhere in this repository. `src/lib/github.ts` reads the
+public repositories of the account named in `site.github.user` (`src/lib/site.ts`) from the
+GitHub REST API, and `/portfolio` renders them: name, description, language, topics, stars,
+forks, last push, plus links to the repository and to its `homepage` where one is set. The
+home page shows the three most recent described repositories.
+
+Forks, archived and private repositories are excluded; anything else you want kept off the
+site goes in the `hidden` array in `src/lib/github.ts`. So a repository that is pushed,
+renamed, described, given topics or given a website appears on the site without a deploy —
+the fetch is cached for an hour (`revalidate`), and the language filter tabs are derived
+from whatever the account actually contains.
+
+The call is unauthenticated by default and never throws: if GitHub is down, renamed or
+rate-limiting the host, the list comes back empty, the page explains that and links to the
+profile, and the home-page section removes itself rather than heading an empty grid.
 
 ## Languages
 
@@ -110,8 +127,9 @@ navbar is the only thing that changes language, and it keeps you on the page you
 - **Server components** call `getDictionary(locale)`; **client components** use
   `useDictionary()` from `LocaleProvider`. Only the locale string crosses the boundary — the
   dictionary is resolved from bundled modules, so nothing is re-serialised on navigation.
-  Case-study and article bodies are passed to the filter components as props rather than
-  imported, keeping three languages of long-form copy out of the client bundle.
+  Article bodies are passed to the filter components as props rather than imported, keeping
+  three languages of long-form copy out of the client bundle. Repositories are passed the
+  same way, so the GitHub fetch stays on the server.
 - **Adding a language** means adding it to `locales` in `src/lib/i18n/config.ts`, adding a
   dictionary, and adding a `copy` block to each content module. TypeScript lists every
   remaining gap.
@@ -134,6 +152,7 @@ properly means either moving `<html>` into a root `app/layout.tsx` — which cos
 | `NEXT_PUBLIC_GA_ID` | optional | GA4, loaded only after consent |
 | `RESEND_API_KEY` | optional | Contact form delivery |
 | `CONTACT_TO_EMAIL` / `CONTACT_FROM_EMAIL` | optional | Enquiry routing |
+| `GITHUB_TOKEN` | optional | Read-only token, purely to raise the GitHub API rate limit behind `/portfolio`. Unauthenticated requests allow 60 an hour per IP against one hourly fetch, so this is only needed if a shared host IP gets throttled |
 
 Without `RESEND_API_KEY` the contact route validates the payload, logs it and returns
 success, so the form is testable locally with no credentials.
@@ -159,8 +178,10 @@ success, so the form is testable locally with no credentials.
 - Counters use `requestAnimationFrame` gated by `useInView`, so they never run offscreen
 - Calendly's widget (~90KB) is deferred behind an `IntersectionObserver`
 - GA4 is not requested at all until consent is granted
-- Project imagery is SVG served through `next/image` with `sizes` set per breakpoint;
-  only the first card in a grid gets `priority`
+- Repository cards carry no imagery at all — the header block is typography, so the
+  portfolio grid costs no image requests and cannot shift layout
+- The GitHub list is fetched at build and revalidated hourly on the server; the browser
+  never calls the API, and filtering runs against data already in the page
 - `optimizePackageImports` for `lucide-react` and `framer-motion` keeps icon imports tree-shaken
 
 Reaching Lighthouse 95+ also depends on hosting. Run `npm run build && npm start` and audit
@@ -172,11 +193,10 @@ the production build — `next dev` scores considerably lower by design.
    by counsel, in any of the three languages. A translated privacy policy is not a compliant
    one, and a German-language site additionally needs an Impressum (§ 5 DDG) that this
    document set does not provide.
-2. Client names, metrics and quotes in `src/content/projects.ts` and `testimonials.ts` are
-   illustrative. Publishing figures requires client sign-off.
-   The `repoUrl` / `liveUrl` on two of them point at `example.com` and a fictional GitHub
-   org — replace or delete. Both are optional: omit either and its link stops rendering,
-   which is the normal case for closed-source client work.
+2. Client names, metrics and quotes in `src/content/testimonials.ts` are illustrative, as are
+   the counters in `src/lib/i18n/dictionaries/*` under `stats`. Publishing figures requires
+   client sign-off. The portfolio itself is real — it comes from GitHub — so the testimonials
+   sitting beside it are now the least believable thing on the page.
 3. Contact details in `src/lib/site.ts` — `phone` is a reserved fictional number
    (555-0132) and `address` is an invented San Francisco office. Neither is shown on the
    contact page any more, but **both are still published in the Schema.org graph on every
@@ -187,5 +207,6 @@ the production build — `next dev` scores considerably lower by design.
 4. Team members in `src/app/[locale]/about/page.tsx` — names, initials and avatar gradients
    live in that file; their roles and focus areas are in `pages.about.team` in each
    dictionary, so a new hire needs editing in four places.
-5. Project artwork in `public/images/projects/` — generated placeholders; swap for real
-   screenshots (keep the 16:10 ratio).
+5. Repository descriptions, topics and website fields are edited on GitHub, not here. They
+   are the portfolio copy now: a repository with no description renders as "No description
+   on GitHub yet", and one with no `homepage` shows no live link.

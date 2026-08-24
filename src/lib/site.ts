@@ -9,6 +9,12 @@
 const DEFAULT_SITE_URL = 'https://archon.studio'
 
 /**
+ * GitHub account the portfolio is built from — see `src/lib/github.ts`.
+ * Changing it here repoints both the live repository list and the social link.
+ */
+const GITHUB_USER = 'EronMorina'
+
+/**
  * Resolve NEXT_PUBLIC_SITE_URL into something `new URL()` will accept.
  *
  * `process.env.X ?? fallback` is not enough: `??` only catches null and
@@ -49,8 +55,10 @@ export const site = {
   address: { street: '2 Pier Road, Suite 400', city: 'San Francisco', region: 'CA', postal: '94111', country: 'US' },
   calendly: process.env.NEXT_PUBLIC_CALENDLY_URL ?? 'https://calendly.com/archon-studio/intro-call',
   founded: '2017',
+  /** Source of the portfolio: `github.user`'s public repositories. */
+  github: { user: GITHUB_USER, url: `https://github.com/${GITHUB_USER}` },
   socials: [
-    { label: 'GitHub', href: 'https://github.com/archon-studio' },
+    { label: 'GitHub', href: `https://github.com/${GITHUB_USER}` },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/company/archon-studio' },
     { label: 'X', href: 'https://x.com/archonstudio' },
     { label: 'Dribbble', href: 'https://dribbble.com/archon-studio' },
@@ -80,7 +88,6 @@ export const footerNav = [
     key: 'company',
     links: [
       { key: 'about', href: '/about' },
-      { key: 'caseStudies', href: '/case-studies' },
       { key: 'portfolio', href: '/portfolio' },
       { key: 'blog', href: '/blog' },
       { key: 'contact', href: '/contact' },

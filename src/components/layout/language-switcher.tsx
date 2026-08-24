@@ -20,8 +20,8 @@ import { cn } from '@/lib/utils'
  *
  * Switching keeps you on the page you are reading: the current pathname is
  * stripped of its locale prefix and rebuilt for the target language. Because
- * slugs are shared across locales, `/de/case-studies/atlas-capital-portal`
- * maps cleanly to `/case-studies/atlas-capital-portal`.
+ * slugs are shared across locales, `/de/blog/the-handover-is-the-product`
+ * maps cleanly to `/blog/the-handover-is-the-product`.
  *
  * Each option is a real <Link>, so it is middle-clickable and navigates
  * client-side. Radix mounts the menu contents only when open, so these links

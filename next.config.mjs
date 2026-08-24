@@ -14,6 +14,19 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
+  /**
+   * The site used to publish hand-written case studies. That catalogue is gone
+   * — the portfolio is now generated from GitHub — so anything still pointing
+   * at the old URLs lands on the portfolio instead of a 404. Both the
+   * unprefixed default locale and the prefixed ones are covered.
+   */
+  async redirects() {
+    return [
+      { source: '/case-studies/:path*', destination: '/portfolio', permanent: true },
+      { source: '/:locale(de|fr)/case-studies/:path*', destination: '/:locale/portfolio', permanent: true },
+    ]
+  },
+
   async headers() {
     return [
       {

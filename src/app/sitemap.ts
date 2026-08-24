@@ -1,6 +1,5 @@
 import type { MetadataRoute } from 'next'
 import { site } from '@/lib/site'
-import { projectSlugs } from '@/content/projects'
 import { getPosts } from '@/content/posts'
 import { defaultLocale, locales } from '@/lib/i18n/config'
 import { languageAlternates, localePath } from '@/lib/i18n/paths'
@@ -17,7 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/', priority: 1, changeFrequency: 'weekly' as const },
     { path: '/services', priority: 0.9, changeFrequency: 'monthly' as const },
     { path: '/portfolio', priority: 0.9, changeFrequency: 'weekly' as const },
-    { path: '/case-studies', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: '/about', priority: 0.7, changeFrequency: 'monthly' as const },
     { path: '/blog', priority: 0.8, changeFrequency: 'weekly' as const },
     { path: '/contact', priority: 0.8, changeFrequency: 'yearly' as const },
@@ -32,12 +30,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: route.changeFrequency,
       priority: route.priority,
-    })),
-    ...projectSlugs.map((slug) => ({
-      path: `/case-studies/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly' as const,
-      priority: 0.7,
     })),
     ...[...postDates.entries()].map(([slug, date]) => ({
       path: `/blog/${slug}`,
