@@ -1,4 +1,4 @@
-# ARCHON — software studio website
+# ARCHION — software studio website
 
 A production-ready marketing site for a software development agency. Next.js App Router,
 TypeScript, Tailwind, Framer Motion, shadcn/ui primitives, Lucide icons.

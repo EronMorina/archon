@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 /**
- * ARCHON design system.
+ * ARCHION design system.
  * Every colour is an HSL triplet exposed as a CSS variable in globals.css so a
  * single `.dark` class flips the whole palette with no duplicated utilities.
  * The palette is monochrome — see globals.css for why the accent ramp is

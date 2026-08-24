@@ -13,7 +13,7 @@ export const en = {
   site: {
     tagline: 'Building software that moves businesses forward.',
     description:
-      'ARCHON is a software studio that designs and builds websites, custom web applications, AI-powered solutions and business automation for startups and growing companies.',
+      'ARCHION is a software studio that designs and builds websites, custom web applications, AI-powered solutions and business automation for startups and growing companies.',
     kicker: 'Software studio',
     remoteFirst: 'Remote-first',
   },
@@ -265,7 +265,7 @@ export const en = {
       lead: 'Every repository below is pulled live from GitHub, most recently pushed first. Filter by language, or search by name and topic.',
       metaTitle: 'Portfolio',
       metaDescription:
-        'Public repositories from ARCHON on GitHub — each one with its language, topics, source code and, where there is one, the live build.',
+        'Public repositories from ARCHION on GitHub — each one with its language, topics, source code and, where there is one, the live build.',
     },
     blog: {
       eyebrow: 'Writing',
@@ -273,7 +273,7 @@ export const en = {
       lead: 'What we learned on real engagements, including the decisions we would make differently. One issue a month, no sequences.',
       metaTitle: 'Blog',
       metaDescription:
-        'Engineering notes from the ARCHON team on AI evaluation, real-user performance, handover quality, field software design and honest scoping.',
+        'Engineering notes from the ARCHION team on AI evaluation, real-user performance, handover quality, field software design and honest scoping.',
     },
     about: {
       eyebrow: 'About',
@@ -282,7 +282,7 @@ export const en = {
         `Founded in ${founded}. We work in small senior teams, publish the numbers our clients agree to share, and measure ourselves on whether your engineers can extend what we built six months later.`,
       metaTitle: 'About',
       metaDescription:
-        'ARCHON is a 14-person software studio founded in 2017. We work in small senior teams, publish our numbers, and hand over code your own engineers can extend.',
+        'ARCHION is a 14-person software studio founded in 2017. We work in small senior teams, publish our numbers, and hand over code your own engineers can extend.',
       principlesEyebrow: 'How we operate',
       principlesTitle: 'Four commitments we have turned down work over.',
       principlesLead:
@@ -350,7 +350,7 @@ export const en = {
       lead: 'Send the details below, or book a slot directly. Either way you speak to a technical lead first — we do not run a qualification layer.',
       metaTitle: 'Contact',
       metaDescription:
-        'Start a project with ARCHON. Send a message or book a 30-minute call straight into a technical lead’s calendar — no qualification call first.',
+        'Start a project with ARCHION. Send a message or book a 30-minute call straight into a technical lead’s calendar — no qualification call first.',
       formHeading: 'Enquiry form',
       details: {
         email: 'Email',
@@ -399,7 +399,7 @@ export const en = {
     messageLabel: 'What are you trying to solve?',
     messagePlaceholder:
       'We coordinate 4,000 daily freight loads through spreadsheets, and two depots keep accepting the same load…',
-    consent: 'ARCHON may email me about this enquiry. No marketing lists, and no sharing with anyone else.',
+    consent: 'ARCHION may email me about this enquiry. No marketing lists, and no sharing with anyone else.',
     submit: 'Send message',
     sending: 'Sending',
     sentTitle: 'Message sent',
