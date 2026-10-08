@@ -15,7 +15,6 @@ export const en = {
     description:
       'ARCHON is a software studio that designs and builds websites, custom web applications, AI-powered solutions and business automation for startups and growing companies.',
     kicker: 'Software studio',
-    remoteFirst: 'Remote-first',
   },
 
   a11y: {

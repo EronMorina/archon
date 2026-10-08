@@ -70,15 +70,6 @@ export function organisationSchema(locale: Locale) {
     inLanguage: localeMeta[locale].tag,
     email: site.email,
     telephone: site.phone,
-    address: {
-      '@type': 'PostalAddress',
-      // No public street address — remote-first, so the schema carries city-level location only.
-      ...(site.address.street ? { streetAddress: site.address.street } : {}),
-      addressLocality: site.address.city,
-      addressRegion: site.address.region,
-      postalCode: site.address.postal,
-      addressCountry: site.address.country,
-    },
     sameAs: site.socials.map((s) => s.href),
     areaServed: 'Worldwide',
     availableLanguage: locales.map((l) => localeMeta[l].tag),

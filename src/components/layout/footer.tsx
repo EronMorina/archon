@@ -21,9 +21,6 @@ export function Footer({ locale }: { locale: Locale }) {
           <div className="max-w-xs">
             <Logo locale={locale} />
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{t.site.tagline}</p>
-            <p className="mt-4 font-mono text-xs text-muted-foreground">
-              {site.address.city}, {site.address.region} · {t.site.remoteFirst}
-            </p>
           </div>
 
           {footerNav.map((group) => {
