@@ -43,16 +43,7 @@ export function Pricing({ locale }: { locale: Locale }) {
                 <h3 className="text-lg">{plan.name}</h3>
                 <p className="mt-1.5 text-sm text-muted-foreground">{plan.pitch}</p>
 
-                {/*
-                  A range is far wider than the single figure this used to
-                  show, so the price drops to text-2xl and the cadence moves
-                  below it rather than sitting alongside. whitespace-nowrap
-                  keeps a range from breaking across its en dash.
-                */}
-                <p className="mt-6 whitespace-nowrap font-display text-2xl font-semibold tracking-tight">
-                  {plan.price}
-                </p>
-                <p className="mt-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
+                <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
                   {plan.cadence}
                 </p>
                 <p className="mt-3 border-t border-border pt-3 text-xs text-muted-foreground">{plan.bestFor}</p>

@@ -12,7 +12,6 @@ export const de: Dictionary = {
     description:
       'ARCHON ist ein Software-Studio, das Websites, individuelle Webanwendungen, KI-gestützte Lösungen und Geschäftsprozess-Automatisierung für Start-ups und wachsende Unternehmen konzipiert und entwickelt.',
     kicker: 'Software-Studio',
-    remoteFirst: 'Remote-first',
   },
 
   a11y: {

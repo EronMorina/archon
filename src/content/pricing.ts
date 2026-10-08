@@ -4,20 +4,12 @@ export type PlanId = 'landing' | 'smallBusiness' | 'standard' | 'premium'
 
 type PlanBase = {
   id: PlanId
-  /**
-   * Default price string, in the English number format. German and French
-   * override it in `copy` — the decimal separator and the position of the €
-   * sign both change (€1,500 / 1.500 € / 1 500 €), so this is one of the few
-   * places where a number is not language-neutral.
-   */
-  price: string
   ctaHref: string
   highlighted?: boolean
 }
 
 type PlanCopy = {
   name: string
-  price?: string
   cadence: string
   pitch: string
   bestFor: string
@@ -26,13 +18,13 @@ type PlanCopy = {
 }
 
 export type Plan = Omit<PlanBase, 'ctaHref'> &
-  Omit<PlanCopy, 'price' | 'ctaLabel'> & { cta: { label: string; href: string } }
+  Omit<PlanCopy, 'ctaLabel'> & { cta: { label: string; href: string } }
 
 const base: PlanBase[] = [
-  { id: 'landing', price: '€1,500–€3,500', ctaHref: '/contact' },
-  { id: 'smallBusiness', price: '€2,500–€4,500', ctaHref: '/contact' },
-  { id: 'standard', price: '€6,500–€12,000', ctaHref: '/contact', highlighted: true },
-  { id: 'premium', price: '€12,000–€25,000', ctaHref: '/contact' },
+  { id: 'landing', ctaHref: '/contact' },
+  { id: 'smallBusiness', ctaHref: '/contact' },
+  { id: 'standard', ctaHref: '/contact', highlighted: true },
+  { id: 'premium', ctaHref: '/contact' },
 ]
 
 const copy: Record<Locale, Record<PlanId, PlanCopy>> = {
@@ -104,7 +96,6 @@ const copy: Record<Locale, Record<PlanId, PlanCopy>> = {
   de: {
     landing: {
       name: 'Landing-Page / One-Pager',
-      price: '1.500–3.500 €',
       cadence: 'Festpreisprojekt',
       pitch: 'Eine einzelne, fokussierte Seite, die ein Angebot erklärt und Anfragen einsammelt.',
       bestFor: 'Produktstarts, Events, Einzelgründer',
@@ -120,7 +111,6 @@ const copy: Record<Locale, Record<PlanId, PlanCopy>> = {
     },
     smallBusiness: {
       name: 'Kleine Unternehmenswebsite',
-      price: '2.500–4.500 €',
       cadence: '3–5 Seiten, Festpreisprojekt',
       pitch: 'Das Wesentliche, sauber umgesetzt: wer Sie sind, was Sie tun, wie man Sie erreicht.',
       bestFor: 'Lokale Betriebe und Praxen',
@@ -136,7 +126,6 @@ const copy: Record<Locale, Record<PlanId, PlanCopy>> = {
     },
     standard: {
       name: 'Standard-Unternehmenswebsite',
-      price: '6.500–12.000 €',
       cadence: '8–15 Seiten, Festpreisprojekt',
       pitch: 'Eine vollständige Website mit echter Inhaltsstruktur, die mit Ihnen wächst.',
       bestFor: 'Etablierte Unternehmen mit laufenden Inhalten',
@@ -153,7 +142,6 @@ const copy: Record<Locale, Record<PlanId, PlanCopy>> = {
     },
     premium: {
       name: 'Premium / mehrsprachig',
-      price: '12.000–25.000 €',
       cadence: '20+ Seiten, individueller Umfang',
       pitch: 'Mehrere Sprachen, individuelle Funktionen und Integrationen — vorher gemeinsam zugeschnitten.',
       bestFor: 'Unternehmen in mehreren Märkten und regulierten Branchen',
@@ -173,7 +161,6 @@ const copy: Record<Locale, Record<PlanId, PlanCopy>> = {
   fr: {
     landing: {
       name: 'Landing page / one-pager',
-      price: '1 500–3 500 €',
       cadence: 'projet au forfait',
       pitch: 'Une page unique et ciblée qui présente une offre et recueille les demandes.',
       bestFor: 'Lancements produit, événements, fondateurs solo',
@@ -189,7 +176,6 @@ const copy: Record<Locale, Record<PlanId, PlanCopy>> = {
     },
     smallBusiness: {
       name: 'Site vitrine',
-      price: '2 500–4 500 €',
       cadence: '3 à 5 pages, projet au forfait',
       pitch: 'L’essentiel, bien fait : qui vous êtes, ce que vous faites, comment vous joindre.',
       bestFor: 'Commerces et cabinets locaux',
@@ -205,7 +191,6 @@ const copy: Record<Locale, Record<PlanId, PlanCopy>> = {
     },
     standard: {
       name: 'Site d’entreprise standard',
-      price: '6 500–12 000 €',
       cadence: '8 à 15 pages, projet au forfait',
       pitch: 'Un site complet avec une vraie structure de contenu, conçu pour évoluer avec vous.',
       bestFor: 'Entreprises établies qui publient régulièrement',
@@ -222,7 +207,6 @@ const copy: Record<Locale, Record<PlanId, PlanCopy>> = {
     },
     premium: {
       name: 'Premium / multilingue',
-      price: '12 000–25 000 €',
       cadence: '20+ pages, périmètre sur mesure',
       pitch: 'Plusieurs langues, fonctionnalités et intégrations sur mesure — cadrées ensemble au préalable.',
       bestFor: 'Entreprises multi-marchés et réglementées',
@@ -242,11 +226,10 @@ const copy: Record<Locale, Record<PlanId, PlanCopy>> = {
 
 export function getPlans(locale: Locale): Plan[] {
   return base.map(({ ctaHref, ...plan }) => {
-    const { price, ctaLabel, ...localised } = copy[locale][plan.id]
+    const { ctaLabel, ...localised } = copy[locale][plan.id]
     return {
       ...plan,
       ...localised,
-      price: price ?? plan.price,
       cta: { label: ctaLabel, href: ctaHref },
     }
   })

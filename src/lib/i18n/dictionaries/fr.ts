@@ -13,7 +13,6 @@ export const fr: Dictionary = {
     description:
       'ARCHON est un studio logiciel qui conçoit et développe des sites web, des applications web sur mesure, des solutions basées sur l’IA et l’automatisation des processus pour les start-up et les entreprises en croissance.',
     kicker: 'Studio logiciel',
-    remoteFirst: 'Télétravail d’abord',
   },
 
   a11y: {
